@@ -1,1 +1,2 @@
-# learning django  first 1 hour complete without any doubt 
+print((lambda number: "even" if number % 2 == 0 else "odd")(6))
+# today i have learn what is static file , how to render bootstrap , how to create a app in python  , how to create super user for admin panel

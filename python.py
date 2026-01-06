@@ -1,2 +1,7 @@
 
-# today i have learn what is static file , how to render bootstrap , how to create a app in python  , how to create super user for admin panel
+# today i have learn what about spread operation ,shortcircuit and error handling
+number =int(input("enter the number"))
+if(number%2==0):
+    print("even")
+else:
+    print("odd")

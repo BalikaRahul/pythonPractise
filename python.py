@@ -41,8 +41,21 @@ class Solution(object):
         if original ==x :
             return True
         return False
-x =int(input("enter the number:"))
-obj =Solution()
-result = obj.isPalindrome(x)
-print(result)
-        
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0:
+            return False
+
+        original = x   # ✅ STORE ORIGINAL VALUE
+        rev = 0
+
+        while x > 0:
+            digit = x % 10
+            rev = rev * 10 + digit
+            x //= 10
+
+        return original == rev

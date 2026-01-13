@@ -107,8 +107,31 @@
 # result=obj.whichWeekDay(day)
 # print(result)
 n=5
-for i in range(n):
-    for j in range(i+1):
-        print("*",end="")
+# for i in range(n):
+#     print(" "*(n-i-1),end="")
+#     print("*"*(2*i-1),end="")
+#     print(" "*(n-i-1))
+
+# for i in range(n):
+#     print(" "*i,end="")
+#     print("*"*(2*n-(2*i+1)),end="")
+#     print(" "*i)
+# for i in range(n):
+#     for j in range(i+1):
+#         print("*",end="")
+#     print()
+# for i in range(n):
+#     for j in range(n-i):
+#         print("*",end="")
+#     print()
+num=1
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        # print(num,end=" ")
+        num+=1
+        if (j%2!=0):
+            print("1",end ="")
+        else:
+            print("0",end="")
     print()
         

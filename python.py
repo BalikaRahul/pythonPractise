@@ -106,7 +106,7 @@
 # obj=Solution()
 # result=obj.whichWeekDay(day)
 # print(result)
-n=5
+# n=5
 # for i in range(n):
 #     print(" "*(n-i-1),end="")
 #     print("*"*(2*i-1),end="")
@@ -124,14 +124,47 @@ n=5
 #     for j in range(n-i):
 #         print("*",end="")
 #     print()
-num=1
-for i in range(1,n+1):
-    for j in range(1,i+1):
-        # print(num,end=" ")
-        num+=1
-        if (j%2!=0):
-            print("1",end ="")
-        else:
-            print("0",end="")
-    print()
-        
+# n=2345
+# count =0
+# while n>0:
+#     n=n//10
+#     count+=1
+# print(count)
+# def rev(n):
+#     rev =0
+#     while n > 0:
+#         digit = n%10
+#         rev =rev*10+digit
+#         n//=10
+#     return rev
+# n = 2345
+# result = rev(n)
+# print(result)
+# def Reverse(num):
+#     rev =0
+#     while num >0:
+#         digit =num%10
+#         rev = rev*10+digit
+#         num //=10
+#     return rev
+# num=int(input("enter a number"))
+# result=Reverse(num)
+# print(result)
+# def printAll(n,count):
+#     for i in range(1,n+1):
+#         if (n%i==0):
+#             count +=1
+#     if count <=2:
+#         return ("it is prime number")
+#     else:
+#         return ("it is not a prime")
+#     # return count
+# n=int(input("enter the number: "))
+# count =0
+# result=printAll(n,count)
+# print(result)
+def recursion(n):
+    return recursion
+n= "rahul"
+result = recursion(n)
+print(recursion)

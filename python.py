@@ -163,8 +163,16 @@
 # count =0
 # result=printAll(n,count)
 # print(result)
-def recursion(n):
-    return recursion
-n= "rahul"
-result = recursion(n)
-print(recursion)
+# def recursion(n):
+#     return recursion
+# n= "rahul"
+# result = recursion(n)
+# print(recursion)
+def printName(n):
+    fib=0
+    if n==0:
+        return 0   
+    return fib+printName(n-1)
+    
+    
+print(printName(5))

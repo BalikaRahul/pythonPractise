@@ -168,11 +168,12 @@
 # n= "rahul"
 # result = recursion(n)
 # print(recursion)
-def printName(n):
-    fib=0
-    if n==0:
-        return 0   
-    return fib+printName(n-1)
+# def printName(n):
+#     fib=0
+#     if n==0:
+#         return 0   
+#     return fib+printName(n-1)
     
     
-print(printName(5))
+# print(printName(5))
+#learning basic of django

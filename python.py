@@ -176,4 +176,13 @@
     
     
 # print(printName(5))
-#learning basic of django
+def nothing(nums):
+    rev =0
+    while(nums>0):
+        digit = nums%10
+        rev = rev*10+ digit
+        nums//=10
+    return rev
+nums=987
+result =nothing(nums)
+print(result)

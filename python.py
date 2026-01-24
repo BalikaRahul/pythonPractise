@@ -204,15 +204,26 @@
 # arr=[1,4,2,5,8]
 # result =sort(arr)
 # print(result)
-def sort(arr):
-    for i  in range(1,len(arr)):
-        key =arr[i]
-        j=i-1
-        while j>=0 and arr[j]>key:
-            arr[j+1]=arr[j]
-            j-=1
-            arr[j+1]=key 
-    return arr
-arr=[1,4,2,5,8]
-result =sort(arr)
-print(result)
+# def sort(arr):
+#     for i  in range(1,len(arr)):
+#         key =arr[i]
+#         j=i-1
+#         while j>=0 and arr[j]>key:
+#             arr[j+1]=arr[j]
+#             j-=1
+#             arr[j+1]=key 
+#     return arr
+# arr=[1,4,2,5,8]
+# result =sort(arr)
+# print(result)
+# def SumOf(arr):
+#     sum=0
+#     for i in range(len(arr)):
+#         sum+=arr[i]
+#     return sum
+# arr=[1,2,3,4,10,11]
+# result =SumOf(arr)
+# print(result)
+sum = 2
+sum+=2
+print(sum)

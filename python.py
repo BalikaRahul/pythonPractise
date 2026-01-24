@@ -176,13 +176,43 @@
     
     
 # print(printName(5))
-def nothing(nums):
-    rev =0
-    while(nums>0):
-        digit = nums%10
-        rev = rev*10+ digit
-        nums//=10
-    return rev
-nums=987
-result =nothing(nums)
+# def nothing(nums):
+#     rev =0
+#     while(nums>0):
+#         digit = nums%10
+#         rev = rev*10+ digit
+#         nums//=10
+#     return rev
+# nums=987
+# result =nothing(nums)
+# print(result)
+# def sort(arr):
+#     for i in range(len(arr)-1):
+#         for j in range( i+1,len(arr)):
+#             if(arr[i]<arr[j]):
+#                 arr[i],arr[j]=arr[j],arr[i]
+#     return arr
+# arr=[1,4,2,5,8]
+# result =sort(arr)
+# print(result)
+# def sort(arr):
+#     for i in range(len(arr)-1):
+#         for j in range(len(arr)-i-1):
+#             if(arr[j]>arr[j+1]):
+#                 arr[j],arr[j+1]=arr[j+1],arr[j]
+#     return arr
+# arr=[1,4,2,5,8]
+# result =sort(arr)
+# print(result)
+def sort(arr):
+    for i  in range(1,len(arr)):
+        key =arr[i]
+        j=i-1
+        while j>=0 and arr[j]>key:
+            arr[j+1]=arr[j]
+            j-=1
+            arr[j+1]=key 
+    return arr
+arr=[1,4,2,5,8]
+result =sort(arr)
 print(result)

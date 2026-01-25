@@ -224,6 +224,9 @@
 # arr=[1,2,3,4,10,11]
 # result =SumOf(arr)
 # print(result)
-sum = 2
-sum+=2
-print(sum)
+def staircase(n):
+    for i in range(1, n + 1):
+        print(" " * (n - i) + "#" * i)
+
+staircase(6)  
+

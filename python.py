@@ -224,9 +224,55 @@
 # arr=[1,2,3,4,10,11]
 # result =SumOf(arr)
 # print(result)
-def staircase(n):
-    for i in range(1, n + 1):
-        print(" " * (n - i) + "#" * i)
+# def staircase(n):
+#     for i in range(1, n + 1):
+#         print(" " * (n - i) + "#" * i)
 
-staircase(6)  
+# staircase(6)  
 
+# import math
+# import os
+# import random
+# import re
+# import sys
+
+#
+# Complete the 'staircase' function below.
+#
+# The function accepts INTEGER n as parameter.
+#
+
+# def staircase(n):
+#     # Write your code here
+#     for i in range(1,n+1):
+#         print(" "*(n-i)+"#"*i)
+
+# staircase(6)
+
+# if __name__ == '__main__':
+#     n = int(input().strip())
+
+#     staircase(n)
+# def gradingStudents(grades):
+#     for i in range(len(grades)):
+#         if grades[i]>=38:
+#             next=((grades[i]//5)+1)*5
+#             if next -grades[i]<3:
+#                 grades[i] = next 
+#     return grades
+# grades = [38,56,23,39,59]
+# result =gradingStudents(grades)
+# print(result)
+def divisibleSumPairs(n,ar):
+    k=[]
+    for i in range(len(ar)-1):
+        for j in range(i+1,len(ar)):
+            if (ar[i]+ar[j] )%n ==0:
+                k.append((ar[i],ar[j]))
+                
+    return k
+ar=[1,2,3,4,5,4,2,2]
+
+n=5
+result = divisibleSumPairs(n,ar)
+print(result)

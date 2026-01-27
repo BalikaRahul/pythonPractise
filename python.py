@@ -263,16 +263,44 @@
 # grades = [38,56,23,39,59]
 # result =gradingStudents(grades)
 # print(result)
-def divisibleSumPairs(n,ar):
-    k=[]
-    for i in range(len(ar)-1):
-        for j in range(i+1,len(ar)):
-            if (ar[i]+ar[j] )%n ==0:
-                k.append((ar[i],ar[j]))
+# def divisibleSumPairs(n,ar):
+#     k=[]
+#     for i in range(len(ar)-1):
+#         for j in range(i+1,len(ar)):
+#             if (ar[i]+ar[j] )%n ==0:
+#                 k.append((ar[i],ar[j]))
                 
-    return k
-ar=[1,2,3,4,5,4,2,2]
+#     return k
+# ar=[1,2,3,4,5,4,2,2]
 
-n=5
-result = divisibleSumPairs(n,ar)
+# n=5
+# result = divisibleSumPairs(n,ar)
+# print(result)
+# def largestElements(arr):
+#     largest =0
+#     for i in range(len(arr)):
+#         if(arr[i]>largest ):
+#             largest =arr[i]
+#     return largest
+# arr=[2,3,4,7,8,10,11]
+# result =largestElements(arr)
+# print(result)
+# def secondLargest(arr):
+#     second =0
+#     largest =0
+#     for i in range(len(arr)):
+#         if(arr[i]>largest):
+#             second=largest
+#             largest =arr[i]
+#     return largest,second
+# arr=[2,3,4,7,8,10,11,12]
+# result =secondLargest(arr)
+# print(result)
+def SortedOrNot(arr):
+    for i in range(len(arr)-1):
+        if(arr[i]>arr[i+1]):
+            return "not sorted"
+    return " sorted"
+arr=[2,3,4,1,7,8,11,12,10]
+result =SortedOrNot(arr)
 print(result)

@@ -296,11 +296,20 @@
 # arr=[2,3,4,7,8,10,11,12]
 # result =secondLargest(arr)
 # print(result)
-def SortedOrNot(arr):
+# def SortedOrNot(arr):
+#     for i in range(len(arr)-1):
+#         if(arr[i]>arr[i+1]):
+#             return "not sorted"
+#     return " sorted"
+# arr=[2,3,4,1,7,8,11,12,10]
+# result =SortedOrNot(arr)
+# print(result)
+def RemoveDeplicates(arr):
     for i in range(len(arr)-1):
-        if(arr[i]>arr[i+1]):
-            return "not sorted"
-    return " sorted"
-arr=[2,3,4,1,7,8,11,12,10]
-result =SortedOrNot(arr)
+        for j in range(i+1,len(arr)-1):
+            if(arr[i]==arr[j]):
+                arr.remove(arr[i])
+    return arr
+arr=[2,3,3,4,1,7,8,11,2,12,10]
+result =RemoveDeplicates(arr)
 print(result)

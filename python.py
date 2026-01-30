@@ -313,12 +313,40 @@
 # arr = [2,3,4,5,6,7,8]
 # result=lef(arr)
 # print(result)
-def RemoveDeplicates(arr):
-    k=[]
-    for i in arr:
-        if i not in k:
-            k.append(i)
-    return k
-arr=[2,3,3,4,1,7,8,11,2,12,10]
-result =RemoveDeplicates(arr)
+# def RemoveDeplicates(arr):
+#     k=[]
+#     for i in arr:
+#         if i not in k:
+#             k.append(i)
+#     return k
+# arr=[2,3,3,4,1,7,8,11,2,12,10]
+# result =RemoveDeplicates(arr)
+# print(result)
+# def leftByD(arr,n,direction):
+#     k=[]
+#     if (direction=="left"):
+#         for i in range(n,len(arr)):
+#             k.append(arr[i])
+#         for j in range(0,n):
+#             k.append(arr[j])
+#     else:
+#         for i in range(len(arr)-1,-n):
+#             k.append(arr[i])
+#         for j in range(0,len(arr)):
+#             k.append(arr[j])
+#     return k
+# arr=[2,3,3,4,1,7,8,11,2,12,10]
+# direction=input("enter left or right: ")
+# n=3
+# result =leftByD(arr,n,direction)
+# print(result)
+def moveZero(arr):
+    j=0
+    for i in range(len(arr)):
+            if(arr[i]!=0):
+                arr[j],arr[i]=arr[i],arr[j]
+                j+=1
+    return arr
+arr=[1,0,0,1,1,0,0]
+result=moveZero(arr)
 print(result)

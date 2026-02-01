@@ -351,11 +351,48 @@
 # result=moveZero(arr)
 # print(result)
 #just to maintain streak 
-def even(n):
-    if n%2==0:
-        return "even"
-    else:
-        return "odd"
-n=2
-result =even(n)
+# def even(n):
+#     if n%2==0:
+#         return "even"
+#     else:
+#         return "odd"
+# n=2
+# result =even(n)
+# print(result)
+# def union(arr1,arr2):
+#     k=[]
+#     for i in arr1:
+#         if i not in k:
+#              k.append(i)
+#         for j in arr2:
+#             if j not in k:
+#              k.append(j)
+#     return k
+# arr1=[1,2,3,4,5]
+# arr2=[1,3,4,5,6]
+# result =union(arr1,arr2)
+# print(result)
+# def missingNumber(arr):
+#     sum =0
+#     n=len(arr)+1
+#     for i in range(len(arr)):
+#         sum+=arr[i]
+#     m =n*(n+1)/2
+#     dif =m-sum
+#     return dif
+# arr=[1,3,4,5,6]
+# result =missingNumber(arr)
+# print(result)
+def maxi(arr):
+    maxim =0
+    count =0
+    for i in range(len(arr)):
+        if(arr[i]==1 ):
+            count +=1
+        else:
+            count =0
+        maxim = max(maxim,count)
+    return maxim
+arr=[1,1,1,0,1,1,0,0,1,0,1]
+result =maxi(arr)
 print(result)

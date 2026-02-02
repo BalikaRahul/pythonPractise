@@ -383,16 +383,17 @@
 # arr=[1,3,4,5,6]
 # result =missingNumber(arr)
 # print(result)
-def maxi(arr):
-    maxim =0
-    count =0
-    for i in range(len(arr)):
-        if(arr[i]==1 ):
-            count +=1
-        else:
-            count =0
-        maxim = max(maxim,count)
-    return maxim
-arr=[1,1,1,0,1,1,0,0,1,0,1]
-result =maxi(arr)
-print(result)
+# def maxi(arr):
+#     maxim =0
+#     count =0
+#     for i in range(len(arr)):
+#         if(arr[i]==1 ):
+#             count +=1
+#         else:
+#             count =0
+#         maxim = max(maxim,count)
+#     return maxim
+# arr=[1,1,1,0,1,1,0,0,1,0,1]
+# result =maxi(arr)
+# print(result)
+# sql prep

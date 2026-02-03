@@ -397,3 +397,57 @@
 # result =maxi(arr)
 # print(result)
 # sql prep
+# def CountOne(arr):
+#     for i in range(len(arr)):
+#         count =0
+#         for j in range(len(arr)):
+#             if arr[j]==arr[i]:
+#                 count +=1
+#         if count ==1:
+#             return arr[i]
+#     return -1
+# arr=[2,2,5,3,4,4,3]
+# result= CountOne(arr)
+# print(result)
+# def targetVal (arr,target):
+#     maxLength=0
+#     for i in range(len(arr)):
+#         current =0
+#         for j in range(i,len(arr)):
+#             for k in range(i,j+1):
+#                 current+=arr[k]
+#             if current ==target :
+#                 maxLength=max(maxLength,j-i+1)
+#     return maxLength
+# arr = [2,3,4,4,3,3,1,5,8]
+# target =10
+# result =targetVal(arr,target)
+# print(result)
+def sort (arr):
+    if(len(arr)>1):
+        mid =len(arr)//2
+        left =arr[:mid]
+        right=arr[mid:]
+        sort(left)
+        sort(right)
+        i=j=k=0
+        while i<len(left) and j <len(right):
+            if left[i]<right[j]:
+                arr[k]=left[i]
+                i+=1
+            else:
+                arr[k]=right[j]
+                j+=1
+            k+=1
+        while i<len(left):
+            arr[k]=left[i]
+            i+=1
+            k+=k
+        while j <len(right):
+            arr[k]=right[j]
+            j+=1
+            k+=1
+    return arr
+arr = [2,4,1,5,6,8,9]
+result =sort(arr)
+print(arr)

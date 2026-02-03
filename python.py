@@ -423,31 +423,48 @@
 # target =10
 # result =targetVal(arr,target)
 # print(result)
-def sort (arr):
-    if(len(arr)>1):
-        mid =len(arr)//2
-        left =arr[:mid]
-        right=arr[mid:]
-        sort(left)
-        sort(right)
-        i=j=k=0
-        while i<len(left) and j <len(right):
-            if left[i]<right[j]:
-                arr[k]=left[i]
-                i+=1
-            else:
-                arr[k]=right[j]
-                j+=1
-            k+=1
-        while i<len(left):
-            arr[k]=left[i]
-            i+=1
-            k+=k
-        while j <len(right):
-            arr[k]=right[j]
-            j+=1
-            k+=1
-    return arr
-arr = [2,4,1,5,6,8,9]
-result =sort(arr)
-print(arr)
+# def sort (arr):
+#     if(len(arr)>1):
+#         mid =len(arr)//2
+#         left =arr[:mid]
+#         right=arr[mid:]
+#         sort(left)
+#         sort(right)
+#         i=j=k=0
+#         while i<len(left) and j <len(right):
+#             if left[i]<right[j]:
+#                 arr[k]=left[i]
+#                 i+=1
+#             else:
+#                 arr[k]=right[j]
+#                 j+=1
+#             k+=1
+#         while i<len(left):
+#             arr[k]=left[i]
+#             i+=1
+#             k+=k
+#         while j <len(right):
+#             arr[k]=right[j]
+#             j+=1
+#             k+=1
+#     return arr
+# arr = [2,4,1,5,6,8,9]
+# result =sort(arr)
+# print(arr)
+def search(arr,target):
+    n=len(arr)
+    low =0
+    high=n-1
+    while low <=high:
+        mid=(low+high)//2
+        if (arr[mid]==target):
+            return "found at index",mid+1
+        elif (target >arr[mid]):
+            low = mid+1
+        else:
+            high =mid-1
+    return -1
+arr= [1,2,3,4,5,6,7,23]
+target =23
+result = search(arr,target)
+print(result)

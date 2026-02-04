@@ -488,16 +488,107 @@
 # arr=[1,3,4,5,6,7]
 # result =missingNumber(arr)
 # print(result)
-def AddingOfNumber(arr,target):
-    sum =0
-    for i in range(len(arr)):
-        for j in range(i+1,len(arr)):
-            if (target-arr[i]==arr[j]):
-                sum =arr[j]
-    return sum
-arr=[1,3,4,5,6,7]
-target =int(input("enter the number:"))
-result =AddingOfNumber(arr,target)
+# def AddingOfNumber(arr,target):
+#     sum =0
+#     for i in range(len(arr)):
+#         for j in range(i+1,len(arr)):
+#             if (target-arr[i]==arr[j]):
+#                 sum =arr[j]
+#     return sum
+# arr=[1,3,4,5,6,7]
+# target =int(input("enter the number:"))
+# result =AddingOfNumber(arr,target)
+# print(result)
+# def search (arr,target):
+#     low =0
+#     high =len(arr)-1
+#     while low <=high:
+#         mid =(low+high)//2
+#         if (arr[mid]==target):
+#             return mid
+#         elif arr[mid]<target:
+#             low =mid+1
+#         else :
+#             high =mid-1
+#     return -1
+# arr= [1,2,3,4,5,6,7,23]
+# target =23
+# result = search(arr,target)
+# print(result)
+# class Solution:
+#     def search(self, nums, target):
+#         low =0
+#         high =len(arr)-1
+#         while low <= high:
+#             mid = (low +high)//2
+#             if (nums[mid]==target):
+#                 return mid
+#             elif nums[mid]<target:
+#                 low =mid+1
+#             else:
+#                 high =mid-1
+#         return -1
+# arr =[1,2,3,4,5,6,8,9]
+# target =9
+# Sol=Solution()
+# result =Sol.search(arr,target)
+# print(result)
+# def merge(arr):
+#     if (len(arr)>1):
+#         mid = len(arr)//2
+#         left = arr[:mid]
+#         right = arr[mid:]
+#         merge(left)
+#         merge(right)
+#         i=j=k=0
+#         while i<len(left) and j <len(right):
+#             if left[i] <right[j]:
+#                 arr[k]=left[i]
+#                 i+=1
+#             else:
+#                 arr[k]=right[j]
+#                 j+=1
+#             k+=1
+#         while i<len(left):
+#             arr[k]=left[i]
+#             i+=1
+#             k+=1
+#         while j<len(right):
+#             arr[k]=right[j]
+#             j+=1
+#             k+=1
+#     return arr
+# arr=[1,0,2,1,0]
+# result =merge(arr)
+# print(result)
+class Solution:
+    def sortZeroOneTwo(self, nums):
+        if (len(nums)>1):
+            mid = len(nums)//2
+            left = nums[:mid]
+            right = nums[mid:]
+            self.sortZeroOneTwo(left)
+            self.sortZeroOneTwo(right)
+            i=j=k=0
+            while i <len(left) and j <len(right):
+                if (left[i]<right[j]):
+                    nums[k]=left[i]
+                    i+=1
+                else:
+                    nums[k]= right[j]
+                    j+=1
+                k+=1
+            while i<len(left):
+                nums[k]=left[i]
+                i+=1
+                k+=1
+            while j<len(right):
+                nums[k]=right[j]
+                j+=1
+                k+=1
+        return nums
+nums=[1,0,2,1,0]
+sol=Solution()
+result =sol.sortZeroOneTwo(nums)
 print(result)
-        
-
+            

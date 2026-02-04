@@ -477,15 +477,27 @@
 # for i in range(1,len(arr)):
 #     if (arr[i]!=i):
 #         print(i)
-def missingNumber(arr):
+# def missingNumber(arr):
+#     sum =0
+#     n =len(arr)+1
+#     for i in range(len(arr)):
+#         sum+=arr[i]
+#     n=n*(n+1)//2
+#     dif =n - sum 
+#     return dif
+# arr=[1,3,4,5,6,7]
+# result =missingNumber(arr)
+# print(result)
+def AddingOfNumber(arr,target):
     sum =0
-    n =len(arr)+1
     for i in range(len(arr)):
-        sum+=arr[i]
-    n=n*(n+1)//2
-    dif =n - sum 
-    return dif
+        for j in range(i+1,len(arr)):
+            if (target-arr[i]==arr[j]):
+                sum =arr[j]
+    return sum
 arr=[1,3,4,5,6,7]
-result =missingNumber(arr)
+target =int(input("enter the number:"))
+result =AddingOfNumber(arr,target)
 print(result)
-    
+        
+

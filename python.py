@@ -451,20 +451,41 @@
 # arr = [2,4,1,5,6,8,9]
 # result =sort(arr)
 # print(arr)
-def search(arr,target):
-    n=len(arr)
-    low =0
-    high=n-1
-    while low <=high:
-        mid=(low+high)//2
-        if (arr[mid]==target):
-            return "found at index",mid+1
-        elif (target >arr[mid]):
-            low = mid+1
-        else:
-            high =mid-1
-    return -1
-arr= [1,2,3,4,5,6,7,23]
-target =23
-result = search(arr,target)
+# def search(arr,target):
+#     n=len(arr)
+#     low =0
+#     high=n-1
+#     while low <=high:
+#         mid=(low+high)//2
+#         if (arr[mid]==target):
+#             return "found at index",mid+1
+#         elif (target >arr[mid]):
+#             low = mid+1
+#         else:
+#             high =mid-1
+#     return -1
+# arr= [1,2,3,4,5,6,7,23]
+# target =23
+# result = search(arr,target)
+# print(result)
+# # n=5
+# for i in range(n+1):
+#     for j in range(n,i,-1):
+#         print("*",end=" ")
+#     print( )
+# arr=[1,3,4,5,6,7]
+# for i in range(1,len(arr)):
+#     if (arr[i]!=i):
+#         print(i)
+def missingNumber(arr):
+    sum =0
+    n =len(arr)+1
+    for i in range(len(arr)):
+        sum+=arr[i]
+    n=n*(n+1)//2
+    dif =n - sum 
+    return dif
+arr=[1,3,4,5,6,7]
+result =missingNumber(arr)
 print(result)
+    

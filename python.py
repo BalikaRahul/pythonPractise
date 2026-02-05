@@ -561,34 +561,46 @@
 # arr=[1,0,2,1,0]
 # result =merge(arr)
 # print(result)
-class Solution:
-    def sortZeroOneTwo(self, nums):
-        if (len(nums)>1):
-            mid = len(nums)//2
-            left = nums[:mid]
-            right = nums[mid:]
-            self.sortZeroOneTwo(left)
-            self.sortZeroOneTwo(right)
-            i=j=k=0
-            while i <len(left) and j <len(right):
-                if (left[i]<right[j]):
-                    nums[k]=left[i]
-                    i+=1
-                else:
-                    nums[k]= right[j]
-                    j+=1
-                k+=1
-            while i<len(left):
-                nums[k]=left[i]
-                i+=1
-                k+=1
-            while j<len(right):
-                nums[k]=right[j]
-                j+=1
-                k+=1
-        return nums
-nums=[1,0,2,1,0]
-sol=Solution()
-result =sol.sortZeroOneTwo(nums)
+# class Solution:
+#     def sortZeroOneTwo(self, nums):
+#         if (len(nums)>1):
+#             mid = len(nums)//2
+#             left = nums[:mid]
+#             right = nums[mid:]
+#             self.sortZeroOneTwo(left)
+#             self.sortZeroOneTwo(right)
+#             i=j=k=0
+#             while i <len(left) and j <len(right):
+#                 if (left[i]<right[j]):
+#                     nums[k]=left[i]
+#                     i+=1
+#                 else:
+#                     nums[k]= right[j]
+#                     j+=1
+#                 k+=1
+#             while i<len(left):
+#                 nums[k]=left[i]
+#                 i+=1
+#                 k+=1
+#             while j<len(right):
+#                 nums[k]=right[j]
+#                 j+=1
+#                 k+=1
+#         return nums
+# nums=[1,0,2,1,0]
+# sol=Solution()
+# result =sol.sortZeroOneTwo(nums)
+# print(result)
+def searching(target,arr):
+    for i in range(len(arr)):
+        for j in range(i+1,len(arr)):
+            if (arr[i]+arr[j]==target):
+                return i,j
+        return 0
+
+arr=[2,6,5,8,11]
+target =7
+result=searching(target,arr)
 print(result)
+
             

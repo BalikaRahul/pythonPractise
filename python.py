@@ -591,16 +591,50 @@
 # sol=Solution()
 # result =sol.sortZeroOneTwo(nums)
 # print(result)
-def searching(target,arr):
+# def searching(target,arr):
+#     for i in range(len(arr)):
+#         for j in range(i+1,len(arr)):
+#             if (arr[i]+arr[j]==target):
+#                 return i,j
+#             return 0
+
+# arr=[2,6,5,8,11]
+# target =7
+# result=searching(target,arr)
+# print(result)
+# def Search(target,arr):
+#     seen =set()
+#     for i in arr:
+#         if (target-i in seen):
+#             return target-i,i
+#         seen.add(i)
+
+# arr=[2,6,5,8,11]
+# target =7
+# result=Search(target,arr)
+# print(result)
+# def Sum(arr):
+#     n=len(arr)
+#     count =0
+#     if (n<0):
+#         return 0
+#     else:
+#         for i in range(n-1):
+#             if (arr[i]==arr[i+1]):
+#                 count+=1
+#         return count,arr[i]
+def Sum(arr):
     for i in range(len(arr)):
-        for j in range(i+1,len(arr)):
-            if (arr[i]+arr[j]==target):
-                return i,j
-        return 0
+        num =arr[i]
+        count =0
+        for j in range(len(arr)):
+            if arr[j]==num:
+                count+=1
+            if count ==1:
+                return num
+        return -1
 
-arr=[2,6,5,8,11]
-target =7
-result=searching(target,arr)
+
+arr = [2,3,4,4,3,3,1,5,8]
+result =Sum(arr)
 print(result)
-
-            

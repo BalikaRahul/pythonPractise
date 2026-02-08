@@ -658,12 +658,12 @@
 # result =movingAllZero(arr)
 # print(result)
 def removeDuplicate(arr):
-    left =0
-    right =len(arr)-1
-    while left < right :
-        if arr[left]!=arr[right]:
-            left +=1
-        elif arr[right]==arr[left]:
-            right-=1
-        else:
-            arr
+    i=0
+    for j in range(1,len(arr)):
+        if arr[j]!=arr[i]:
+            i+=1
+            arr[i]=arr[j]
+    return i+1
+arr = [1,0,1,0,0,0,1]
+result =removeDuplicate(arr)
+print(result,arr[:result])

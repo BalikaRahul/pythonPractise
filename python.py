@@ -667,7 +667,43 @@
 # arr = [1,0,1,0,0,0,1]
 # result =removeDuplicate(arr)
 # print(result,arr[:result])
-a='aabbcdd'
-for i in range(len(a)):
-    if a[i]!=a[i+1]:
-        print(i)
+# a='aabbcdd'
+# for i in range(len(a)):
+#     if a[i]!=a[i+1]:
+#         print(i)
+class Solution(object):
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        if (len(nums)<0):
+            return 0
+        if (len(nums)>1):
+            mid =len(nums)//2
+            left = nums[:mid]
+            right = nums[mid:]
+            self.sortColors(left)
+            self.sortColors(right)
+            i=j=k=0
+            while i<len(left) and j <len(right):
+                if left[i] <right[j]:
+                    nums[k]=left[i]
+                    i+=1
+                else:
+                    nums[k]=right[j]
+                    j+=1
+                k+=1
+            while i<len(left):
+                nums[k]=left[i]
+                i+=1
+                k+=1
+            while j<len(right):
+                nums[k]=right[j]
+                j+=1
+                k+=1
+        return nums   
+nums= [2,0,2,1,1,1,0]
+sol=Solution()
+result = sol.sortColors(nums)
+print(result)

@@ -707,18 +707,31 @@
 # sol=Solution()
 # result = sol.sortColors(nums)
 # print(result)
-def movingAllZero(arr):
-    left =0
-    right =len(arr)-1
-    if (len(arr)==0):
-        return 0
-    while left <right :
-        if arr[left]==0 :
+# def movingAllZero(arr):
+#     left =0
+#     right =len(arr)-1
+#     if (len(arr)==0):
+#         return 0
+#     while left <right :
+#         if arr[left]==0 :
+#             arr[left],arr[right]=arr[right],arr[left]
+#             right-=1
+#         else:
+#             left+=1
+#     return arr
+# arr=[1,0,0,0,1,1,1]
+# result = movingAllZero(arr)
+# print(result)
+def movingAllEven(arr):
+    left = 0
+    right=len(arr)-1
+    while left <right:
+        if arr[left]%2!=0:
             arr[left],arr[right]=arr[right],arr[left]
             right-=1
         else:
             left+=1
     return arr
-arr=[1,0,0,0,1,1,1]
-result = movingAllZero(arr)
+arr=[2,3,4,5,6,9]
+result =movingAllEven(arr)
 print(result)

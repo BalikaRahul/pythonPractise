@@ -722,16 +722,48 @@
 # arr=[1,0,0,0,1,1,1]
 # result = movingAllZero(arr)
 # print(result)
-def movingAllEven(arr):
-    left = 0
-    right=len(arr)-1
-    while left <right:
-        if arr[left]%2!=0:
-            arr[left],arr[right]=arr[right],arr[left]
-            right-=1
-        else:
-            left+=1
-    return arr
-arr=[2,3,4,5,6,9]
-result =movingAllEven(arr)
-print(result)
+# def movingAllEven(arr):
+#     left = 0
+#     right=len(arr)-1
+#     while left <right:
+#         if arr[left]%2!=0:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             right-=1
+#         else:
+#             left+=1
+#     return arr
+# arr=[2,3,4,5,6,9]
+# result =movingAllEven(arr)
+# print(result)
+# def vaildParalindromw(a,target):
+#     left =0
+#     right =len(a)-1
+#     while left < right:
+#         if a[left]==target:
+#             return left
+#         elif a[left] <target:
+#             left+=1
+#         else:
+#             right-=1
+#     return -1
+# a="Rahul"
+# target ="Ra"
+# result = vaildParalindromw(a,target)
+# print(result)
+# a='Nothing to see here bro just do your work'
+# target ="to"
+# for i in range(len(a)):
+#     if a[i]==target:
+#         print(i)
+#     else:
+#         print("not there in the string")
+a = "Nothing to do here bro just do your work"
+target = "to"
+word =a.split()
+
+for i in range(len(word)):
+    if word[i] == target:
+        print("Found at index:", i)
+        break
+else:
+    print("Not found")

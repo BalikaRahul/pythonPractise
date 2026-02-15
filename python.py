@@ -757,13 +757,14 @@
 #         print(i)
 #     else:
 #         print("not there in the string")
-a = "Nothing to do here bro just do your work"
-target = "to"
-word =a.split()
+# a = "Nothing to do here bro just do your work"
+# target = "to"
+# word =a.split()
 
-for i in range(len(word)):
-    if word[i] == target:
-        print("Found at index:", i)
-        break
-else:
-    print("Not found")
+# for i in range(len(word)):
+#     if word[i] == target:
+#         print("Found at index:", i)
+#         break
+# else:
+#     print("Not found")
+#nothing 

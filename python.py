@@ -768,3 +768,21 @@
 # else:
 #     print("Not found")
 #nothing 
+def binarySearch(nums,target):
+    if len(nums)<0:
+        return 0
+    left =0
+    right =len(nums)-1
+    while left <=right:
+        mid =len(nums)//2
+        if nums[mid]==target:
+            return "the element is at index",mid
+        elif nums[mid]<left:
+            left +=1
+        else:
+            right-=1
+    return -1
+nums =[1,2,3,4,5,6,7,8]
+target =5
+result = binarySearch(nums,target)
+print(result)

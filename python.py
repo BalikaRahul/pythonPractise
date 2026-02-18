@@ -787,3 +787,8 @@
 # result = binarySearch(nums,target)
 # print(result)
 #no progress
+n = 2
+if (n%2==0):
+    print("even")
+else:
+    print("odd")

@@ -787,3 +787,6 @@
 # result = binarySearch(nums,target)
 # print(result)
 #no progress
+def today(arr):
+    for i in range(len(arr)):
+        arr+=1

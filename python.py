@@ -787,6 +787,50 @@
 # result = binarySearch(nums,target)
 # print(result)
 #no progress
-def today(arr):
-    for i in range(len(arr)):
-        arr+=1
+# def sorting(arr):
+#     if len(arr)>1:
+#         mid = len(arr)//2
+#         left =arr[:mid]
+#         right =arr[mid:]
+#         sorting(left)
+#         sorting(right)
+#         i=j=k=0
+#         while i <len(left) and j < len(right):
+#             if left[i]<right[j]:
+#                 arr[k]=left[i]
+#                 i+=1
+#             else:
+#                 arr[k]=right[j]
+#                 j+=1
+#             k+=1
+#         while i<len(left):
+#             arr[k]=left[i]
+#             i+=1
+#             k+=1
+#         while j < len(right):
+#             arr[k]=right[j]
+#             j+=1
+#             k+=1
+#     return arr
+# arr = [1,2,5,4,3,6,9,8,7]
+# result = sorting(arr)
+# print(result)
+# print("secondLargest",arr[-2])
+def search(arr,target):
+    if (len(arr)>1):
+        left = 0
+        right =len(arr)-1
+        while left <= right:
+            mid = (left+right)//2
+            if arr[mid]== target:
+                return mid
+            elif arr[mid]<target:
+                left=mid+1
+            else:
+                right=mid-1
+    return 0
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target=8
+result = search(arr,target)
+print(result)
+    

@@ -847,6 +847,18 @@
 # arr = [9,9,9,9]
 # result = PlusOne(arr)
 # print(result)
-
-
+def removeDepulicates(arr):
+    left =0
+    right =1
+    while right < len(arr):
+        if arr[left]!=arr[right]:
+            left +=1
+            arr[left]=arr[right]
+        right+=1
+    return left+1
+ 
+arr = [1,2,2,3,4,4,5,5]
+result =removeDepulicates(arr)
+print("elements:",arr[:result])
+print(result)
     

@@ -833,20 +833,20 @@
 # target=8
 # result = search(arr,target)
 # print(result)
-def PlusOne(arr):
-    left =0
-    right=len(arr)-1
-    while right>= left:
-        if arr[right]<9:
-            arr[right]+=1 
-            return arr
-        else:
-            arr[right]=0
-            right-=1
-    return [1]+ arr
-arr = [9,9,9,9]
-result = PlusOne(arr)
-print(result)
+# def PlusOne(arr):
+#     left =0
+#     right=len(arr)-1
+#     while right>= left:
+#         if arr[right]<9:
+#             arr[right]+=1 
+#             return arr
+#         else:
+#             arr[right]=0
+#             right-=1
+#     return [1]+ arr
+# arr = [9,9,9,9]
+# result = PlusOne(arr)
+# print(result)
 
 
     

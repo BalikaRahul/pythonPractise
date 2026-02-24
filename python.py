@@ -847,32 +847,32 @@
 # arr = [9,9,9,9]
 # result = PlusOne(arr)
 # print(result)
-# def removeDepulicates(arr):
-#     left =0
-#     right =1
-#     while right < len(arr):
-#         if arr[left]!=arr[right]:
-#             left +=1
-#             arr[left]=arr[right]
-#         right+=1
-#     return left+1
- 
-# arr = [1,2,2,3,4,4,5,5]
-# result =removeDepulicates(arr)
-# print("elements:",arr[:result])
-# print(result)
-def removeElement(arr,target):
+def removeDepulicates(arr):
     left =0
-    right = len(arr)-1
-    while left <= right:
-        if arr[left]==target:
-            arr[left],arr[right]=arr[right],arr[left]
-            right-=1
-        else :
-            left+=1 
-    return left
-target =2
-arr =[1,2,3,4,2,1]
-result = removeElement(arr,target)
+    right =1
+    while right < len(arr):
+        if arr[left]!=arr[right]:
+            left +=1
+            arr[left]=arr[right]
+        right+=1
+    return left+1
+ 
+arr = [1,2,2,3,4,4,5,5]
+result =removeDepulicates(arr)
+print("elements:",arr[:result])
 print(result)
-print(arr[:result])
+# def removeElement(arr,target):
+#     left =0
+#     right = len(arr)-1
+#     while left <= right:
+#         if arr[left]==target:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             right-=1
+#         else :
+#             left+=1 
+#     return left
+# target =2
+# arr =[1,2,3,4,2,1]
+# result = removeElement(arr,target)
+# print(result)
+# print(arr[:result])

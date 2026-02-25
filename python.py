@@ -847,20 +847,20 @@
 # arr = [9,9,9,9]
 # result = PlusOne(arr)
 # print(result)
-def removeDepulicates(arr):
-    left =0
-    right =1
-    while right < len(arr):
-        if arr[left]!=arr[right]:
-            left +=1
-            arr[left]=arr[right]
-        right+=1
-    return left+1
+# def removeDepulicates(arr):
+#     left =0
+#     right =1
+#     while right < len(arr):
+#         if arr[left]!=arr[right]:
+#             left +=1
+#             arr[left]=arr[right]
+#         right+=1
+#     return left+1
  
-arr = [1,2,2,3,4,4,5,5]
-result =removeDepulicates(arr)
-print("elements:",arr[:result])
-print(result)
+# arr = [1,2,2,3,4,4,5,5]
+# result =removeDepulicates(arr)
+# print("elements:",arr[:result])
+# print(result)
 # def removeElement(arr,target):
 #     left =0
 #     right = len(arr)-1
@@ -876,3 +876,19 @@ print(result)
 # result = removeElement(arr,target)
 # print(result)
 # print(arr[:result])
+def sortedArray(nums):
+    left=0
+    right=1
+    while left<len(nums) and right<len(nums):
+        if nums[left]%2==0:
+            left+=2
+        elif nums[right]%2==1:
+            right+=2
+        else:
+            nums[left],nums[right]=nums[right],nums[left]
+            left+=2
+            right+=2
+    return nums
+nums =[4,2,5,7]
+result = sortedArray(nums)
+print(nums)

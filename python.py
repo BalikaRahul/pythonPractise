@@ -892,25 +892,43 @@
 # nums =[4,2,5,7]
 # result = sortedArray(nums)
 # print(nums)
+# class Solution(object):
+#     def findContentChildren(self, g, s):
+#         """
+#         :type g: List[int]
+#         :type s: List[int]
+#         :rtype: int
+#         """
+#         g.sort()
+#         s.sort()
+#         left =0
+#         right =0
+#         while left <len(g) and right< len(s):
+#             if s[right]>=g[left]:
+#                 left+=1
+#             right+=1
+#         return left
+
+# s=[1,2,3]
+# g = [1,2,3]
+# sol=Solution()
+# result = sol.findContentChildren(g,s)
+# print(result)
 class Solution(object):
-    def findContentChildren(self, g, s):
+    def countPairs(self, nums, target):
         """
-        :type g: List[int]
-        :type s: List[int]
+        :type nums: List[int]
+        :type target: int
         :rtype: int
         """
-        g.sort()
-        s.sort()
+        nums.sort()
         left =0
-        right =0
-        while left <len(g) and right< len(s):
-            if s[right]>=g[left]:
+        right =len(nums)-1
+        count =0
+        while left < right:
+            if nums[left]+nums[right]<target:
+                count+=(right-left)
                 left+=1
-            right+=1
-        return left
-
-s=[1,2,3]
-g = [1,2,3]
-sol=Solution()
-result = sol.findContentChildren(g,s)
-print(result)
+            else:
+                right-=1
+        return count        

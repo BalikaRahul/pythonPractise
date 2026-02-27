@@ -914,21 +914,38 @@
 # sol=Solution()
 # result = sol.findContentChildren(g,s)
 # print(result)
+# class Solution(object):
+#     def countPairs(self, nums, target):
+#         """
+#         :type nums: List[int]
+#         :type target: int
+#         :rtype: int
+#         """
+#         nums.sort()
+#         left =0
+#         right =len(nums)-1
+#         count =0
+#         while left < right:
+#             if nums[left]+nums[right]<target:
+#                 count+=(right-left)
+#                 left+=1
+#             else:
+#                 right-=1
+#         return count 
 class Solution(object):
-    def countPairs(self, nums, target):
+    def numSteps(self, s):
         """
-        :type nums: List[int]
-        :type target: int
+        :type s: str
         :rtype: int
         """
-        nums.sort()
-        left =0
-        right =len(nums)-1
-        count =0
-        while left < right:
-            if nums[left]+nums[right]<target:
-                count+=(right-left)
-                left+=1
+        c =0
+        n=int(s,2)
+        while n > 1:
+            if n%2!=0:
+                n+=1
             else:
-                right-=1
-        return count        
+                n=n//2
+            c+=1
+        return c
+        
+

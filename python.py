@@ -932,20 +932,64 @@
 #             else:
 #                 right-=1
 #         return count 
-class Solution(object):
-    def numSteps(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        c =0
-        n=int(s,2)
-        while n > 1:
-            if n%2!=0:
-                n+=1
-            else:
-                n=n//2
-            c+=1
-        return c
+# class Solution(object):
+#     def numSteps(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+#         c =0
+#         n=int(s,2)
+#         while n > 1:
+#             if n%2!=0:
+#                 n+=1
+#             else:
+#                 n=n//2
+#             c+=1
+#         return c
+# def RemovingElement(arr):
+#     left =0
+#     right = 1
+#     while right <len(arr):
+#         if arr[left]!=arr[right]:
+#             left+=1
+#             arr[left]=arr[right]
+#         right+=1
+#     return left+1
+# arr=[1,1,2,3,3,4,5]
+# result=RemovingElement(arr)
+# print(result)
+# print(arr[:result])
+# def unsortedList(arr,target):
+#     left = 0
+#     right =len(arr)-1
+#     while left < right:
+#         if arr[left]!=target:
+#             left+=1
+#         elif arr[left]==target:
+#             arr[left],arr[right]=arr[right],arr[left] 
+#             right-=1
+#         else:
+#             left+=1
+#     return left+1
+# arr=[1,1,2,3,3,4,5]
+# target =1
+# result=unsortedList(arr,target)
+# print(result)
+# print(arr[:result]) 
+def movingAllZero(arr):
+    left =0
+    right=0
+    while right <len(arr):
+        if arr[right]!=0:
+            arr[left],arr[right]=arr[right],arr[left]
+            left+=1
+        right+=1
+        # elif arr[left]!=0:
+        #     left +=1
+    return arr
+arr=[0,1,0,3,12]
+result=movingAllZero(arr)
+print(result)
         
 

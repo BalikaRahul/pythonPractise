@@ -977,19 +977,52 @@
 # result=unsortedList(arr,target)
 # print(result)
 # print(arr[:result]) 
-def movingAllZero(arr):
-    left =0
-    right=0
-    while right <len(arr):
-        if arr[right]!=0:
-            arr[left],arr[right]=arr[right],arr[left]
-            left+=1
-        right+=1
-        # elif arr[left]!=0:
-        #     left +=1
-    return arr
-arr=[0,1,0,3,12]
-result=movingAllZero(arr)
-print(result)
-        
+# def movingAllZero(arr):
+#     left =0
+#     right=0
+#     while right <len(arr):
+#         if arr[right]!=0:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             left+=1
+#         right+=1
+#         # elif arr[left]!=0:
+#         #     left +=1
+#     return arr
+# arr=[0,1,0,3,12]
+# result=movingAllZero(arr)
+# print(result)
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
 
+        merge_sort(left)
+        merge_sort(right)
+
+        i = j = k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+    return arr
+
+# Now, handle the squaring outside the recursive function
+arr = [5, -2, 3, -4, 1]
+sorted_arr = merge_sort(arr)
+final_result = [x**2 for x in sorted_arr]
+
+print(final_result)

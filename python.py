@@ -991,38 +991,51 @@
 # arr=[0,1,0,3,12]
 # result=movingAllZero(arr)
 # print(result)
-def merge_sort(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        left = arr[:mid]
-        right = arr[mid:]
+# def merge_sort(arr):
+#     if len(arr) > 1:
+#         mid = len(arr) // 2
+#         left = arr[:mid]
+#         right = arr[mid:]
 
-        merge_sort(left)
-        merge_sort(right)
+#         merge_sort(left)
+#         merge_sort(right)
 
-        i = j = k = 0
-        while i < len(left) and j < len(right):
-            if left[i] < right[j]:
-                arr[k] = left[i]
-                i += 1
-            else:
-                arr[k] = right[j]
-                j += 1
-            k += 1
+#         i = j = k = 0
+#         while i < len(left) and j < len(right):
+#             if left[i] < right[j]:
+#                 arr[k] = left[i]
+#                 i += 1
+#             else:
+#                 arr[k] = right[j]
+#                 j += 1
+#             k += 1
         
-        while i < len(left):
-            arr[k] = left[i]
-            i += 1
-            k += 1
-        while j < len(right):
-            arr[k] = right[j]
-            j += 1
-            k += 1
-    return arr
+#         while i < len(left):
+#             arr[k] = left[i]
+#             i += 1
+#             k += 1
+#         while j < len(right):
+#             arr[k] = right[j]
+#             j += 1
+#             k += 1
+#     return arr
 
-# Now, handle the squaring outside the recursive function
-arr = [5, -2, 3, -4, 1]
-sorted_arr = merge_sort(arr)
-final_result = [x**2 for x in sorted_arr]
+# # Now, handle the squaring outside the recursive function
+# arr = [5, -2, 3, -4, 1]
+# sorted_arr = merge_sort(arr)
+# final_result = [x**2 for x in sorted_arr]
 
-print(final_result)
+# print(final_result)
+class Solution(object):
+    def reverseString(self, s):
+        """
+        :type s: List[str]
+        :rtype: None Do not return anything, modify s in-place instead.
+        """
+        left =0
+        right=len(s)-1
+        while left < right:
+            s[left],s[right]=s[right],s[left]
+            left+=1
+            right-=1
+        return s

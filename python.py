@@ -1026,16 +1026,32 @@
 # final_result = [x**2 for x in sorted_arr]
 
 # print(final_result)
-class Solution(object):
-    def reverseString(self, s):
-        """
-        :type s: List[str]
-        :rtype: None Do not return anything, modify s in-place instead.
-        """
-        left =0
-        right=len(s)-1
-        while left < right:
-            s[left],s[right]=s[right],s[left]
-            left+=1
-            right-=1
-        return s
+# class Solution(object):
+#     def reverseString(self, s):
+#         """
+#         :type s: List[str]
+#         :rtype: None Do not return anything, modify s in-place instead.
+#         """
+#         left =0
+#         right=len(s)-1
+#         while left < right:
+#             s[left],s[right]=s[right],s[left]
+#             left+=1
+#             right-=1
+#         return s
+def twoSum(numbers, target):
+    left = 0
+    right = len(numbers)-1
+
+    while left < right:
+        total = numbers[left] + numbers [right]
+        if total == target:
+            return left, right
+        elif total < target :
+                left += 1
+        else:
+                right -= 1
+numbers = [2,7,11,15]
+target = 9
+result = twoSum(numbers,target)
+print(result)

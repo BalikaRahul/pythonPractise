@@ -1071,21 +1071,35 @@
 # height = [1,8,6,2,5,4,8,3,7]
 # result = waterProblem(height)
 # print(result)
-def isPalindrome(s):
-    cleaned = ""
-    for char in s:
-        if char.isalnum():
-            cleaned += char.lower()
+# def isPalindrome(s):
+#     cleaned = ""
+#     for char in s:
+#         if char.isalnum():
+#             cleaned += char.lower()
 
-    left = 0
-    right = len(cleaned) - 1
-    while left < right:
-        if cleaned[left]!=cleaned[right]:
-            return False
-        elif cleaned[left]==cleaned[right]:
-            left+=1
-            right-=1
-    return True
-s="!!!"
-result=isPalindrome(s)
-print(result)
+#     left = 0
+#     right = len(cleaned) - 1
+#     while left < right:
+#         if cleaned[left]!=cleaned[right]:
+#             return False
+#         elif cleaned[left]==cleaned[right]:
+#             left+=1
+#             right-=1
+#     return True
+# s="!!!"
+# result=isPalindrome(s)
+# print(result)
+class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        left =2
+        right =2
+        while left<len(nums):
+            if nums[left]!=nums[right-2]:
+                nums[right]=nums[left]
+                right+=1
+            left +=1
+        return right

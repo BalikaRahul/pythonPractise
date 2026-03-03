@@ -1055,19 +1055,37 @@
 # target = 9
 # result = twoSum(numbers,target)
 # print(result)
-def waterProblem(height):
-    left = 0 
-    right =len(height)-1
-    largest =0
+# def waterProblem(height):
+#     left = 0 
+#     right =len(height)-1
+#     largest =0
+#     while left < right:
+#         current= min(height[left],height[right])*(right-left)
+#         if current>largest:
+#             largest = current 
+#         if height[left] < height[right]:
+#             left += 1
+#         else :
+#             right -=1
+#     return largest
+# height = [1,8,6,2,5,4,8,3,7]
+# result = waterProblem(height)
+# print(result)
+def isPalindrome(s):
+    cleaned = ""
+    for char in s:
+        if char.isalnum():
+            cleaned += char.lower()
+
+    left = 0
+    right = len(cleaned) - 1
     while left < right:
-        current= min(height[left],height[right])*(right-left)
-        if current>largest:
-            largest = current 
-        if height[left] < height[right]:
-            left += 1
-        else :
-            right -=1
-    return largest
-height = [1,8,6,2,5,4,8,3,7]
-result = waterProblem(height)
+        if cleaned[left]!=cleaned[right]:
+            return False
+        elif cleaned[left]==cleaned[right]:
+            left+=1
+            right-=1
+    return True
+s="!!!"
+result=isPalindrome(s)
 print(result)

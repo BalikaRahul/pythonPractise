@@ -1089,17 +1089,17 @@
 # s="!!!"
 # result=isPalindrome(s)
 # print(result)
-class Solution(object):
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        left =2
-        right =2
-        while left<len(nums):
-            if nums[left]!=nums[right-2]:
-                nums[right]=nums[left]
-                right+=1
-            left +=1
-        return right
+# class Solution(object):
+#     def removeDuplicates(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         left =2
+#         right =2
+#         while left<len(nums):
+#             if nums[left]!=nums[right-2]:
+#                 nums[right]=nums[left]
+#                 right+=1
+#             left +=1
+#         return right

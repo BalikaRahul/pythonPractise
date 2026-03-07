@@ -1112,3 +1112,15 @@
 # arr=[2,3,4,5,6,8]
 # result=noProgress(arr)
 # print(result)
+# Program to print Fibonacci sequence
+
+n = 10
+
+a = 0
+b = 1
+
+print("Fibonacci sequence:")
+
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b

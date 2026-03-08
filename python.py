@@ -1114,13 +1114,13 @@
 # print(result)
 # Program to print Fibonacci sequence
 
-n = 10
+# n = 10
 
-a = 0
-b = 1
+# a = 0
+# b = 1
 
-print("Fibonacci sequence:")
+# print("Fibonacci sequence:")
 
-for i in range(n):
-    print(a, end=" ")
-    a, b = b, a + b
+# for i in range(n):
+#     print(a, end=" ")
+#     a, b = b, a + b

@@ -1124,3 +1124,16 @@
 # for i in range(n):
 #     print(a, end=" ")
 #     a, b = b, a + b
+def leetcode(arr,item):
+    mincap=float('inf')
+    ans=-1
+    for i in range(len(arr)):
+        if arr[i]>=item and arr[i]<mincap:
+            mincap =arr[i]
+            ans=i
+    return ans
+arr=[1,5,3,7]
+item=3
+result= leetcode(arr,item)
+print(result)
+

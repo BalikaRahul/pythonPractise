@@ -1124,16 +1124,31 @@
 # for i in range(n):
 #     print(a, end=" ")
 #     a, b = b, a + b
-def leetcode(arr,item):
-    mincap=float('inf')
-    ans=-1
-    for i in range(len(arr)):
-        if arr[i]>=item and arr[i]<mincap:
-            mincap =arr[i]
-            ans=i
-    return ans
-arr=[1,5,3,7]
-item=3
-result= leetcode(arr,item)
+# def leetcode(arr,item):
+#     mincap=float('inf')
+#     ans=-1
+#     for i in range(len(arr)):
+#         if arr[i]>=item and arr[i]<mincap:
+#             mincap =arr[i]
+#             ans=i
+#     return ans
+# arr=[1,5,3,7]
+# item=3
+# result= leetcode(arr,item)
+# print(result)
+def search(arr,target):
+    left =0
+    right =len(arr)-1
+    while left <=right:
+        mid = (left+right)//2
+        if arr[mid]==target:
+            return ("found at index:", mid)
+        elif arr[mid]<target:
+            left = mid+1
+        else:
+            right=mid-1
+    return -1
+arr= [2,3,4,5,6,8]
+target = 5
+result = search(arr,target)
 print(result)
-

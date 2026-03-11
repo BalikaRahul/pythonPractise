@@ -1136,19 +1136,35 @@
 # item=3
 # result= leetcode(arr,item)
 # print(result)
-def search(arr,target):
+# def search(arr,target):
+#     left =0
+#     right =len(arr)-1
+#     while left <=right:
+#         mid = (left+right)//2
+#         if arr[mid]==target:
+#             return ("found at index:", mid)
+#         elif arr[mid]<target:
+#             left = mid+1
+#         else:
+#             right=mid-1
+#     return -1
+# arr= [2,3,4,5,6,8]
+# target = 5
+# result = search(arr,target)
+# print(result)
+def Water(arr):
     left =0
     right =len(arr)-1
-    while left <=right:
-        mid = (left+right)//2
-        if arr[mid]==target:
-            return ("found at index:", mid)
-        elif arr[mid]<target:
-            left = mid+1
+    largest =0
+    while left <right:
+        current = min(arr[left],arr[right])*(right-left)
+        if current >largest:
+            largest = current
+        if arr[left]< arr[right]:
+            left+=1
         else:
-            right=mid-1
-    return -1
-arr= [2,3,4,5,6,8]
-target = 5
-result = search(arr,target)
+            right-=1
+    return largest
+arr = [1,8,6,2,5,4,8,3,7]
+result = Water(arr)
 print(result)

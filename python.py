@@ -1152,19 +1152,19 @@
 # target = 5
 # result = search(arr,target)
 # print(result)
-def Water(arr):
-    left =0
-    right =len(arr)-1
-    largest =0
-    while left <right:
-        current = min(arr[left],arr[right])*(right-left)
-        if current >largest:
-            largest = current
-        if arr[left]< arr[right]:
-            left+=1
-        else:
-            right-=1
-    return largest
-arr = [1,8,6,2,5,4,8,3,7]
-result = Water(arr)
-print(result)
+# def Water(arr):
+#     left =0
+#     right =len(arr)-1
+#     largest =0
+#     while left <right:
+#         current = min(arr[left],arr[right])*(right-left)
+#         if current >largest:
+#             largest = current
+#         if arr[left]< arr[right]:
+#             left+=1
+#         else:
+#             right-=1
+#     return largest
+# arr = [1,8,6,2,5,4,8,3,7]
+# result = Water(arr)
+# print(result)

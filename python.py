@@ -26,15 +26,26 @@
 # result = leetCode27(arr,target)
 # print(result)
 # print(arr[:result])
-def leetCode283(arr):
-    left=0
-    right =0
-    while  right < len(arr):
-        if arr[right]!=0:
-            arr[left],arr[right]=arr[right],arr[left]
-            left+=1
-        right+=1
-    return arr
-arr=[0,1,0,0,1,2]
-result = leetCode283(arr)
+# def leetCode283(arr):
+#     left=0
+#     right =0
+#     while  right < len(arr):
+#         if arr[right]!=0:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             left+=1
+#         right+=1
+#     return arr
+# arr=[0,1,0,0,1,2]
+# result = leetCode283(arr)
+# print(result)
+def leetcode344(s):
+    left =0
+    right=len(s)-1
+    while left < right:
+        s[left],s[right]=s[right],s[left]
+        left+=1
+        right-=1
+    return s
+s=["h","e","l","l","o"]
+result = leetcode344(s)
 print(result)

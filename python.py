@@ -38,14 +38,46 @@
 # arr=[0,1,0,0,1,2]
 # result = leetCode283(arr)
 # print(result)
-def leetcode344(s):
-    left =0
-    right=len(s)-1
-    while left < right:
-        s[left],s[right]=s[right],s[left]
-        left+=1
-        right-=1
-    return s
-s=["h","e","l","l","o"]
-result = leetcode344(s)
+# def leetcode344(s):
+#     left =0
+#     right=len(s)-1
+#     while left < right:
+#         s[left],s[right]=s[right],s[left]
+#         left+=1
+#         right-=1
+#     return s
+# s=["h","e","l","l","o"]
+# result = leetcode344(s)
+# print(result)
+def sorting(arr):
+    for i in range(len(arr)):
+        arr[i]=arr[i]**2
+    return arr
+    if len(arr)>1:
+        mid=len(arr)//2
+        left = arr[:mid]
+        right=arr[mid:]
+        sorting(left)
+        sorting(right)
+        i=j=k=0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k]=left[i]
+                i+=1
+            else:
+                arr[k]=right[j]
+                j+=1
+            k+=1
+        while i < len(left):
+            arr[k]=left[i]
+            i+=1
+            k+=1
+        while j< len(right):
+            arr[k]=right[j]
+            j+=1
+            k+=1
+    return arr
+            
+arr=[1,-2,3,4,5]
+result =sorting(arr)
 print(result)

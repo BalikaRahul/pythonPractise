@@ -11,19 +11,30 @@
 # result = leetCode26(arr)
 # print(result)
 # print(arr[:result])
-def leetCode27(arr,target):
-    left =0
-    right =len(arr)-1
-    while left<right:
-        if arr[left]!=target:
-            left+=1
-        elif arr[left]==target:
+# def leetCode27(arr,target):
+#     left =0
+#     right =len(arr)-1
+#     while left<right:
+#         if arr[left]!=target:
+#             left+=1
+#         elif arr[left]==target:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             right-=1
+#     return left
+# arr=[1,1,2]
+# target=1
+# result = leetCode27(arr,target)
+# print(result)
+# print(arr[:result])
+def leetCode283(arr):
+    left=0
+    right =0
+    while  right < len(arr):
+        if arr[right]!=0:
             arr[left],arr[right]=arr[right],arr[left]
-            right-=1
-    return left
-arr=[1,1,2]
-target=1
-result = leetCode27(arr,target)
+            left+=1
+        right+=1
+    return arr
+arr=[0,1,0,0,1,2]
+result = leetCode283(arr)
 print(result)
-print(arr[:result])
-    

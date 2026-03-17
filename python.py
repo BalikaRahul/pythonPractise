@@ -80,18 +80,18 @@
 # arr=[1,-2,3,4,5]
 # result =sorting(arr)
 # print(result)
-# def leetcode(arr,target):
-#     for i in range(len(arr)):
-#         for j in range(i+1,len(arr)):
-#             if arr[i]+arr[j]==target:
-#                 return i,j
-#     return "not found "
+def leetcode(arr,target):
+    for i in range(len(arr)):
+        for j in range(i+1,len(arr)):
+            if arr[i]+arr[j]==target:
+                return i,j
+    return "not found "
 def leetcode167(arr,target):
     left =0
     right=len(arr)-1
     while left<right:
-        total = arr[left]+arr[right]
-        if total ==target:
+        total= arr[left]+arr[right]
+        if total == target:
             return left+1,right+1
         elif total < target:
             left+=1

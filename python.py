@@ -80,25 +80,41 @@
 # arr=[1,-2,3,4,5]
 # result =sorting(arr)
 # print(result)
-def leetcode(arr,target):
-    for i in range(len(arr)):
-        for j in range(i+1,len(arr)):
-            if arr[i]+arr[j]==target:
-                return i,j
-    return "not found "
-def leetcode167(arr,target):
+# def leetcode(arr,target):
+#     for i in range(len(arr)):
+#         for j in range(i+1,len(arr)):
+#             if arr[i]+arr[j]==target:
+#                 return i,j
+#     return "not found "
+# def leetcode167(arr,target):
+#     left =0
+#     right=len(arr)-1
+#     while left<right:
+#         total= arr[left]+arr[right]
+#         if total == target:
+#             return left+1,right+1
+#         elif total < target:
+#             left+=1
+#         else:
+#             right-=1
+#     return "not found"
+# arr=[2,3,4]
+# target=6
+# result = leetcode167(arr,target)
+# print(result)
+def leetcode11(arr):
     left =0
-    right=len(arr)-1
-    while left<right:
-        total= arr[left]+arr[right]
-        if total == target:
-            return left+1,right+1
-        elif total < target:
+    right =len(arr)-1
+    maximum=0
+    while left < right :
+        current =min(arr[left],arr[right])*(right-left)
+        if current > maximum:
+            maximum=current
+        elif arr[left]< arr[right]:
             left+=1
         else:
             right-=1
-    return "not found"
+    return maximum
 arr=[2,3,4]
-target=6
-result = leetcode167(arr,target)
-print(result)
+result = leetcode11(arr)
+print(result)    

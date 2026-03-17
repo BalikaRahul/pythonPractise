@@ -102,19 +102,34 @@
 # target=6
 # result = leetcode167(arr,target)
 # print(result)
-def leetcode11(arr):
-    left =0
-    right =len(arr)-1
-    maximum=0
-    while left < right :
-        current =min(arr[left],arr[right])*(right-left)
-        if current > maximum:
-            maximum=current
-        elif arr[left]< arr[right]:
-            left+=1
-        else:
-            right-=1
-    return maximum
-arr=[2,3,4]
-result = leetcode11(arr)
-print(result)    
+# def leetcode11(arr):
+#     left =0
+#     right =len(arr)-1
+#     maximum=0
+#     while left < right :
+#         current =min(arr[left],arr[right])*(right-left)
+#         if current > maximum:
+#             maximum=current
+#         elif arr[left]< arr[right]:
+#             left+=1
+#         else:
+#             right-=1
+#     return maximum
+# arr=[2,3,4]
+# result = leetcode11(arr)
+# print(result)   
+def leetcode125(s):
+    i = ""
+    for char in s:
+        if char.isalnum():
+            i += char.lower() 
+    j=0
+    k=len(i)-1
+    while j<k:
+        if i[j]!=i[k]:
+            return False
+        elif i[j]==i[k]:
+            j+=1
+            k-=1
+    return True
+        

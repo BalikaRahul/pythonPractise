@@ -118,18 +118,30 @@
 # arr=[2,3,4]
 # result = leetcode11(arr)
 # print(result)   
-def leetcode125(s):
-    i = ""
-    for char in s:
-        if char.isalnum():
-            i += char.lower() 
-    j=0
-    k=len(i)-1
-    while j<k:
-        if i[j]!=i[k]:
-            return False
-        elif i[j]==i[k]:
-            j+=1
-            k-=1
-    return True
-        
+# def leetcode125(s):
+#     i = ""
+#     for char in s:
+#         if char.isalnum():
+#             i += char.lower() 
+#     j=0
+#     k=len(i)-1
+#     while j<k:
+#         if i[j]!=i[k]:
+#             return False
+#         elif i[j]==i[k]:
+#             j+=1
+#             k-=1
+#     return True
+def leetcode80(arr):
+    left =2
+    right =2
+    while left < len(arr):
+        if arr[left]!=arr[right-2]:
+            arr[right]=arr[left]
+            right+=1
+        left+=1
+    return right        
+arr=[0,0,1,1,1,1,2,3,3]
+result = leetcode80(arr)
+print(result)
+print(arr[:result])

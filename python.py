@@ -132,16 +132,39 @@
 #             j+=1
 #             k-=1
 #     return True
-def leetcode80(arr):
-    left =2
-    right =2
-    while left < len(arr):
-        if arr[left]!=arr[right-2]:
-            arr[right]=arr[left]
-            right+=1
-        left+=1
-    return right        
-arr=[0,0,1,1,1,1,2,3,3]
-result = leetcode80(arr)
+# def leetcode80(arr):
+#     left =2
+#     right =2
+#     while left < len(arr):
+#         if arr[left]!=arr[right-2]:
+#             arr[right]=arr[left]
+#             right+=1 
+#         left+=1
+#     return right        
+# arr=[0,0,1,1,1,1,2,3,3]
+# result = leetcode80(arr)
+# print(result)
+# print(arr[:result])
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        result =[]
+        if len(nums)<3:
+            return result
+        if len(nums)>3:
+            for i in range(len(nums)):
+                for j in range(i+1,len(nums)):
+                    for k in range(j+1,len(nums)):
+                        if nums[i]+nums[j]+nums[k]==0:
+                            triplet = sorted([nums[i],nums[j],nums[k]])
+                            if triplet not in result:
+                                result.append(triplet)
+        return result
+                            
+nums=[-1,0,1,2,-1,-4]
+sol=Solution()
+result =sol.threeSum(nums)
 print(result)
-print(arr[:result])

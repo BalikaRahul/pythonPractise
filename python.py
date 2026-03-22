@@ -145,26 +145,69 @@
 # result = leetcode80(arr)
 # print(result)
 # print(arr[:result])
-class Solution(object):
-    def threeSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        result =[]
-        if len(nums)<3:
-            return result
-        if len(nums)>3:
-            for i in range(len(nums)):
-                for j in range(i+1,len(nums)):
-                    for k in range(j+1,len(nums)):
-                        if nums[i]+nums[j]+nums[k]==0:
-                            triplet = sorted([nums[i],nums[j],nums[k]])
-                            if triplet not in result:
-                                result.append(triplet)
-        return result
+# class Solution(object):
+#     def threeSum(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[List[int]]
+#         """
+#         result =[]
+#         if len(nums)<3:
+#             return result
+#         for i in range(len(nums)):
+#             for j in range(i+1,len(nums)):
+#                 for k in range(j+1,len(nums)):
+#                     if nums[i]+nums[j]+nums[k]==0:
+#                         triplet = sorted([nums[i],nums[j],nums[k]])
+#                         if triplet not in result:
+#                             result.append(triplet)
+#         return result
                             
-nums=[-1,0,1,2,-1,-4]
-sol=Solution()
-result =sol.threeSum(nums)
+# nums=[-1,0,1,2,-1,-4]
+# sol=Solution()
+# result =sol.threeSum(nums)
+# print(result)
+# def max_subarray_sum(arr, k):
+#     window_sum = 0
+#     max_sum = 0
+
+#     # Step 1: first window
+#     for i in range(k):
+#         window_sum += arr[i]
+
+#     max_sum = window_sum
+
+#     # Step 2: slide the window
+#     for i in range(k, len(arr)):
+#         window_sum = window_sum - arr[i - k] + arr[i]
+#         max_sum = max(max_sum, window_sum)
+
+#     return max_sum
+
+
+# # Example usage
+# arr = [2, 1, 5, 1, 3, 2]
+# k = 3
+# def onces(nums):
+#     count =0
+#     left =0
+#     right=0
+#     while right<len(nums):
+#         if nums[left]==nums[right]:
+#             left+=1
+#             right+=1
+#         elif nums[left]!=nums[right]:
+#             count +=1
+def leetcode136(nums):
+    n=len(nums)
+    for i in range(n):
+        count=0
+        for j in range(n):
+            if nums[i]==nums[j]:
+                count+=1
+        if count==1:
+            return nums[i]
+    return -1
+nums=[4,1,2,1,2]
+result=leetcode136(nums)
 print(result)

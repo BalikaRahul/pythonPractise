@@ -198,15 +198,26 @@
 #             right+=1
 #         elif nums[left]!=nums[right]:
 #             count +=1
+# def leetcode136(nums):
+#     n=len(nums)
+#     for i in range(n):
+#         count=0
+#         for j in range(n):
+#             if nums[i]==nums[j]:
+#                 count+=1
+#         if count==1:
+#             return nums[i]
+#     return -1
+# nums=[4,1,2,1,2]
+# result=leetcode136(nums)
+# print(result)
 def leetcode136(nums):
-    n=len(nums)
-    for i in range(n):
-        count=0
-        for j in range(n):
-            if nums[i]==nums[j]:
-                count+=1
-        if count==1:
-            return nums[i]
+    feq={}
+    for num in nums:
+        feq[num]=feq.get(num,0)+1
+    for num in nums:
+        if feq[num]==1:
+            return num
     return -1
 nums=[4,1,2,1,2]
 result=leetcode136(nums)

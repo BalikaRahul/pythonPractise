@@ -211,14 +211,30 @@
 # nums=[4,1,2,1,2]
 # result=leetcode136(nums)
 # print(result)
-def leetcode136(nums):
-    feq={}
-    for num in nums:
-        feq[num]=feq.get(num,0)+1
-    for num in nums:
-        if feq[num]==1:
-            return num
-    return -1
-nums=[4,1,2,1,2]
-result=leetcode136(nums)
+# def leetcode136(nums):
+#     feq={}
+#     for num in nums:
+#         feq[num]=feq.get(num,0)+1
+#     for num in nums:
+#         if feq[num]==1:
+#             return num
+#     return -1
+# nums=[4,1,2,1,2]
+# result=leetcode136(nums)
+# print(result)
+def subArray(arr,k):
+    left =0
+    max_len=0
+    sum=0
+    count =0
+    for right in range(len(arr)):
+        while sum == k:
+            sum+=arr[right]
+            left+=1
+            count+=1
+        max_len=max(max_len,count)
+    return max_len
+arr=[10,5,2,7,1,9]
+k=15
+result =subArray(arr,k)
 print(result)

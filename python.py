@@ -238,3 +238,17 @@
 # k=15
 # result =subArray(arr,k)
 # print(result)
+def leetcode169(nums):
+    c={}
+    for i in nums:
+        if i not in c:
+            c[i]=1
+        else:
+            c[i]+=1
+    max_key = max(c, key=c.get)
+    return max_key, c[max_key]
+
+nums=[7,0,0,1,7,7,2,7,7]
+result= leetcode169(nums)
+print(result)
+        

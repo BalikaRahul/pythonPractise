@@ -238,17 +238,28 @@
 # k=15
 # result =subArray(arr,k)
 # print(result)
-def leetcode169(nums):
-    c={}
-    for i in nums:
-        if i not in c:
-            c[i]=1
-        else:
-            c[i]+=1
-    max_key = max(c, key=c.get)
-    return max_key, c[max_key]
+# def leetcode169(nums):
+#     c={}
+#     for i in nums:
+#         if i not in c:
+#             c[i]=1
+#         else:
+#             c[i]+=1
+#     max_key = max(c, key=c.get)
+#     return max_key, c[max_key]
 
-nums=[7,0,0,1,7,7,2,7,7]
-result= leetcode169(nums)
+# nums=[7,0,0,1,7,7,2,7,7]
+# result= leetcode169(nums)
+# print(result)
+def leetcode53(nums):
+    cur=0
+    max_sum=nums[0]
+    for i in range(len(nums)):
+        cur+=nums[i]
+        max_sum=max(cur,max_sum)
+        if cur < 0:
+            cur=0
+    return max_sum
+nums =[-2,1,-3,4,-1,2,1,-5,4]
+result = leetcode53(nums)
 print(result)
-        

@@ -251,15 +251,31 @@
 # nums=[7,0,0,1,7,7,2,7,7]
 # result= leetcode169(nums)
 # print(result)
-def leetcode53(nums):
-    cur=0
-    max_sum=nums[0]
-    for i in range(len(nums)):
-        cur+=nums[i]
-        max_sum=max(cur,max_sum)
-        if cur < 0:
-            cur=0
+# def leetcode53(nums):
+#     cur=0
+#     max_sum=nums[0]
+#     for i in range(len(nums)):
+#         cur+=nums[i]
+#         max_sum=max(cur,max_sum)
+#         if cur < 0:
+#             cur=0
+#     return max_sum
+# nums =[-2,1,-3,4,-1,2,1,-5,4]
+# result = leetcode53(nums)
+# print(result)
+def leetcode121(nums):
+    left =0
+    right=1
+    curr=0
+    max_sum=0
+    while right < len(nums):
+        if nums[left]<nums[right]:
+            curr=nums[right]-nums[left]
+            max_sum=max(curr,max_sum)
+        else:
+            left=right
+        right+=1
     return max_sum
-nums =[-2,1,-3,4,-1,2,1,-5,4]
-result = leetcode53(nums)
+nums=[7,1,5,3,6,4]
+result = leetcode121(nums)
 print(result)

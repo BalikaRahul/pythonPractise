@@ -300,16 +300,34 @@
 #             if nums[i]>nums[(i+1)%n]:
 #                 count+=1
 #         return count<=1
-def leetcode2149(nums):
-    a=[]
-    b=[]
-    for n in nums:
-        if n>0:
-            a.append(n)
-        else:
-            b.append(n)
-    result=[]
-    for i in range(len(a)):
-        result.append(a[i])
-        result.append(b[i])
-    return result
+# def leetcode2149(nums):
+#     a=[]
+#     b=[]
+#     for n in nums:
+#         if n>0:
+#             a.append(n)
+#         else:
+#             b.append(n)
+#     result=[]
+#     for i in range(len(a)):
+#         result.append(a[i])
+#         result.append(b[i])
+#     return result
+
+def leetcode35(self, nums, target):
+    if len(nums)>1:
+        low = 0 
+        high =len(nums)-1
+        while low <=high:
+            mid = (low+high)//2
+            if nums[mid]==target or nums[mid]> target :
+                return mid
+            elif nums[mid]<target:
+                low =mid+1
+            else:
+                high=mid-1
+    return low
+nums=[1,3,5,6]
+target = 5
+result =leetcode35(nums,target)
+print(result)

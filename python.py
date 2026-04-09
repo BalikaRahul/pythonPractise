@@ -314,20 +314,27 @@
 #         result.append(b[i])
 #     return result
 
-def leetcode35(self, nums, target):
-    if len(nums)>1:
-        low = 0 
-        high =len(nums)-1
-        while low <=high:
-            mid = (low+high)//2
-            if nums[mid]==target or nums[mid]> target :
-                return mid
-            elif nums[mid]<target:
-                low =mid+1
-            else:
-                high=mid-1
-    return low
-nums=[1,3,5,6]
-target = 5
-result =leetcode35(nums,target)
+# def leetcode35(self, nums, target):
+#     if len(nums)>1:
+#         low = 0 
+#         high =len(nums)-1
+#         while low <=high:
+#             mid = (low+high)//2
+#             if nums[mid]==target or nums[mid]> target :
+#                 return mid
+#             elif nums[mid]<target:
+#                 low =mid+1
+#             else:
+#                 high=mid-1
+#     return low
+# nums=[1,3,5,6]
+# target = 5
+# result =leetcode35(nums,target)
+# print(result)
+def leetcode1480(nums):
+    for i in range(1,len(nums)):
+        nums[i]+=nums[i-1]
+    return nums
+nums=[1,2,3,4]
+result = leetcode1480(nums)
 print(result)

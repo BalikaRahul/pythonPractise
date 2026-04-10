@@ -331,10 +331,27 @@
 # target = 5
 # result =leetcode35(nums,target)
 # print(result)
-def leetcode1480(nums):
-    for i in range(1,len(nums)):
-        nums[i]+=nums[i-1]
-    return nums
-nums=[1,2,3,4]
-result = leetcode1480(nums)
+# def leetcode1480(nums):
+#     for i in rangex(1,len(nums)):
+#         nums[i]+=nums[i-1]
+#     return nums
+# nums=[1,2,3,4]
+# result = leetcode1480(nums)
+# print(result)
+def leetcode167(nums,target):
+    l=0
+    r=len(nums)-1
+    s=0
+    while l<r:
+        s=nums[l]+nums[r]
+        if s==target:
+            return l+1,r+1
+        elif s<target:
+            l+=1
+        else:
+            r-=1
+    return "not Found"
+nums=[2,7,11,15]
+target=9
+result =leetcode167(nums,target)
 print(result)

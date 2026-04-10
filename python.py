@@ -338,20 +338,35 @@
 # nums=[1,2,3,4]
 # result = leetcode1480(nums)
 # print(result)
-def leetcode167(nums,target):
-    l=0
-    r=len(nums)-1
-    s=0
-    while l<r:
-        s=nums[l]+nums[r]
-        if s==target:
-            return l+1,r+1
-        elif s<target:
+# def leetcode167(nums,target):
+#     l=0
+#     r=len(nums)-1
+#     s=0
+#     while l<r:
+#         s=nums[l]+nums[r]
+#         if s==target:
+#             return l+1,r+1
+#         elif s<target:
+#             l+=1
+#         else:
+#             r-=1
+#     return "not Found"
+# nums=[2,7,11,15]
+# target=9
+# result =leetcode167(nums,target)
+# print(result)
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        l=0
+        r=len(s)-1
+        while l<r:
+            while l < r and not s[l].isalnum():
+                l += 1
+            while l < r and not s[r].isalnum():
+                r -= 1
+            if s[l].lower()!=s[r].lower():
+                return "false"
             l+=1
-        else:
             r-=1
-    return "not Found"
-nums=[2,7,11,15]
-target=9
-result =leetcode167(nums,target)
-print(result)
+        return "true"
+                       

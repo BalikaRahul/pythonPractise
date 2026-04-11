@@ -355,18 +355,34 @@
 # target=9
 # result =leetcode167(nums,target)
 # print(result)
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        l=0
-        r=len(s)-1
-        while l<r:
-            while l < r and not s[l].isalnum():
-                l += 1
-            while l < r and not s[r].isalnum():
-                r -= 1
-            if s[l].lower()!=s[r].lower():
-                return "false"
-            l+=1
-            r-=1
-        return "true"
+# class Solution:
+#     def isPalindrome(self, s: str) -> bool:
+#         l=0
+#         r=len(s)-1
+#         while l<r:
+#             while l < r and not s[l].isalnum():
+#                 l += 1
+#             while l < r and not s[r].isalnum():
+#                 r -= 1
+#             if s[l].lower()!=s[r].lower():
+#                 return "false"
+#             l+=1
+#             r-=1
+#         return "true"
+def leetcode704(nums,target):
+    low =0
+    high=len(nums)-1
+    while low <= high:
+        mid=(low+high)//2
+        if nums[mid]==target:
+            return mid
+        elif nums[mid]<target:
+            low =mid+1
+        else:
+            high=mid-1
+    return -1
+nums = [-1,0,3,5,9,12]
+target = 9
+result=leetcode704(nums,target)
+print(result)
                        

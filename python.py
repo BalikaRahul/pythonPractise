@@ -369,20 +369,38 @@
 #             l+=1
 #             r-=1
 #         return "true"
-def leetcode704(nums,target):
-    low =0
-    high=len(nums)-1
-    while low <= high:
-        mid=(low+high)//2
-        if nums[mid]==target:
-            return mid
-        elif nums[mid]<target:
-            low =mid+1
-        else:
-            high=mid-1
-    return -1
-nums = [-1,0,3,5,9,12]
-target = 9
-result=leetcode704(nums,target)
+# def leetcode704(nums,target):
+#     low =0
+#     high=len(nums)-1
+#     while low <= high:
+#         mid=(low+high)//2
+#         if nums[mid]==target:
+#             return mid
+#         elif nums[mid]<target:
+#             low =mid+1
+#         else:
+#             high=mid-1
+#     return -1
+# nums = [-1,0,3,5,9,12]
+# target = 9
+# result=leetcode704(nums,target)
+# print(result)
+class Solution:
+    def secondLargestElement(self, nums):
+        if len(nums)<2:
+            return None
+        l=float('-inf')
+        s=float('-inf')
+        for i in range(len(nums)):
+            if nums[i]>l:
+                s=l
+                l=nums[i]
+            elif l >nums[i]>s:
+                s=nums[i]
+        if s==float('-inf'):
+            return -1
+        return s
+nums=[8, 8, 7, 6, 5]
+sol=Solution()
+result=sol.secondLargestElement(nums)
 print(result)
-                       

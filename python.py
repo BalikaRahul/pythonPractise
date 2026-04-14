@@ -385,22 +385,81 @@
 # target = 9
 # result=leetcode704(nums,target)
 # print(result)
-class Solution:
-    def secondLargestElement(self, nums):
-        if len(nums)<2:
-            return None
-        l=float('-inf')
-        s=float('-inf')
-        for i in range(len(nums)):
-            if nums[i]>l:
-                s=l
-                l=nums[i]
-            elif l >nums[i]>s:
-                s=nums[i]
-        if s==float('-inf'):
-            return -1
-        return s
-nums=[8, 8, 7, 6, 5]
-sol=Solution()
-result=sol.secondLargestElement(nums)
+# class Solution:
+#     def secondLargestElement(self, nums):
+#         if len(nums)<2:
+#             return None
+#         l=float('-inf')
+#         s=float('-inf')
+#         for i in range(len(nums)):
+#             if nums[i]>l:
+#                 s=l
+#                 l=nums[i]
+#             elif l >nums[i]>s:
+#                 s=nums[i]
+#         if s==float('-inf'):
+#             return -1
+#         return s
+# nums=[8, 8, 7, 6, 5]
+# sol=Solution()
+# result=sol.secondLargestElement(nums)
+# print(result)
+# def sorting(nums):
+#     if len(nums)<1:
+#         return None
+#     if len(nums)>1:
+#         mid = len(nums)//2
+#         left=nums[:mid]
+#         right=nums[mid:]
+#         sorting(left)
+#         sorting(right)
+#         i=j=k=0
+#         while i<len(left) and j< len(right):
+#             if left[i]<right[j]:
+#                 nums[k]=left[i]
+#                 i+=1
+#             else:
+#                 nums[k]=right[j]
+#                 j+=1
+#             k+=1
+#         while i <len(left):
+#             nums[k]=left[i]
+#             i+=1
+#             k+=1
+#         while j<len(right):
+#             nums[k]=right[j]
+#             j+=1
+#             k+=1
+#         return nums  
+# nums=[8, 8, 7, 6, 5]
+# result=sorting(nums)
+# print(result)
+# def searching(nums,target):
+#     if len(nums)==1:
+#         return nums
+#     if len(nums)>2:
+#         left=0
+#         right=len(nums)-1
+#         while left <= right:
+#             mid =(left+right)//2
+#             if nums[mid]==target:
+#                 return mid+1
+#             elif nums[mid]<target:
+#                 left=mid+1
+#             else:
+#                 right=mid-1
+#     return -1
+# nums=[2,3,4,5,6,7,8,9]
+# target=9
+# result=searching(nums,target)
+# print(result)
+def allZero(nums):
+    left =0
+    for right in range(len(nums)):
+        if nums[right]!=0:
+            nums[left],nums[right]=nums[right],nums[left]
+            left+=1
+    return nums
+nums=[1,2,0,2,0,3,0,9,0]
+result = allZero(nums)
 print(result)

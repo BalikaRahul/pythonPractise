@@ -453,13 +453,22 @@
 # target=9
 # result=searching(nums,target)
 # print(result)
-def allZero(nums):
-    left =0
-    for right in range(len(nums)):
-        if nums[right]!=0:
-            nums[left],nums[right]=nums[right],nums[left]
-            left+=1
-    return nums
-nums=[1,2,0,2,0,3,0,9,0]
-result = allZero(nums)
+# def allZero(nums):
+#     left =0
+#     for right in range(len(nums)):
+#         if nums[right]!=0:
+#             nums[left],nums[right]=nums[right],nums[left]
+#             left+=1
+#     return nums
+# nums=[1,2,0,2,0,3,0,9,0]
+# result = allZero(nums)
+# print(result)
+
+def leetcode9(self, x: int) -> bool:
+    s=str(x)
+    return s ==s[::-1]
+x=123
+result =leetcode9
 print(result)
+
+        

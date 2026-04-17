@@ -470,4 +470,21 @@
 # x=123
 # result =leetcode9
 # print(result)
+def waterProblem(nums):
+    left =0
+    right=len(nums)-1
+    maxi=0
+    while left<right:
+        cur =min(nums[left],nums[right])*(right-left)
+        if cur>maxi:
+            maxi =cur
+        elif nums[left]<nums[right]:
+            left+=1
+        else:
+            right-=1
+    return maxi
+nums=[1,8,6,2,5,4,8,3,7]
+result=waterProblem(nums)
+print(result)
+
     

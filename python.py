@@ -464,11 +464,10 @@
 # result = allZero(nums)
 # print(result)
 
-def leetcode9(self, x: int) -> bool:
-    s=str(x)
-    return s ==s[::-1]
-x=123
-result =leetcode9
-print(result)
-
-        
+# def leetcode9(self, x: int) -> bool:
+#     s=str(x)
+#     return s ==s[::-1]
+# x=123
+# result =leetcode9
+# print(result)
+    

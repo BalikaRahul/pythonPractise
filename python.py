@@ -501,7 +501,7 @@
 # result =leetcode3(s)
 # print(result)
 
-def leetcode209(self, target: int, nums: List[int]) -> int:
+def leetcode209(target,nums) -> int:
     left =0
     res =0
     min_len=float('inf')

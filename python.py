@@ -486,21 +486,34 @@
 # nums=[1,8,6,2,5,4,8,3,7]
 # result=waterProblem(nums)
 # print(result)
-def leetcode3(s):
-    left=0
-    res=0
-    seen=set()
-    for right in range(len(s)):
-        while s[right] in seen:
-            seen.remove(s[left])
-            left+=1
-        seen.add(s[right])
-        res=max(res,right-left+1)
-    return res
-s='abcabcbb'
-result =leetcode3(s)
-print(result)
+# def leetcode3(s):
+#     left=0
+#     res=0
+#     seen=set()
+#     for right in range(len(s)):
+#         while s[right] in seen:
+#             seen.remove(s[left])
+#             left+=1
+#         seen.add(s[right])
+#         res=max(res,right-left+1)
+#     return res
+# s='abcabcbb'
+# result =leetcode3(s)
+# print(result)
 
+def leetcode209(self, target: int, nums: List[int]) -> int:
+    left =0
+    res =0
+    min_len=float('inf')
+    for right in range(len(nums)):
+        res+=nums[right]
+        while res>=target:
+            min_len=min(min_len,right-left+1)
+            res-=nums[left]
+            left+=1
+    return 0 if min_len ==float('inf') else min_len
+                    
+        
 
 
 

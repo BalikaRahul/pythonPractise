@@ -501,17 +501,30 @@
 # result =leetcode3(s)
 # print(result)
 
-def leetcode209(target,nums) -> int:
+# def leetcode209(target,nums) -> int:
+#     left =0
+#     res =0
+#     min_len=float('inf')
+#     for right in range(len(nums)):
+#         res+=nums[right]
+#         while res>=target:
+#             min_len=min(min_len,right-left+1)
+#             res-=nums[left]
+#             left+=1
+#     return 0 if min_len ==float('inf') else min_len
+def leetcode424(s,k):
     left =0
-    res =0
-    min_len=float('inf')
-    for right in range(len(nums)):
-        res+=nums[right]
-        while res>=target:
-            min_len=min(min_len,right-left+1)
-            res-=nums[left]
+    count ={}
+    maxCount=0
+    res=0
+    for right in range(len(s)):
+        count[s[right]]=count.get(s[right],0)+1
+        maxCount = max(maxCount,count[s[right]])
+        while (right-left+1)-maxCount>k:
+            count[s[left]]-=1
             left+=1
-    return 0 if min_len ==float('inf') else min_len
+        res =max(res,right-left+1)
+    return res
                     
         
 

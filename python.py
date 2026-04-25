@@ -512,21 +512,34 @@
 #             res-=nums[left]
 #             left+=1
 #     return 0 if min_len ==float('inf') else min_len
-def leetcode424(s,k):
+# def leetcode424(s,k):
+#     left =0
+#     count ={}
+#     maxCount=0
+#     res=0
+#     for right in range(len(s)):
+#         count[s[right]]=count.get(s[right],0)+1
+#         maxCount = max(maxCount,count[s[right]])
+#         while (right-left+1)-maxCount>k:
+#             count[s[left]]-=1
+#             left+=1
+#         res =max(res,right-left+1)
+#     return res
+
+def leetcode3(s):
     left =0
-    count ={}
-    maxCount=0
-    res=0
+    count=0
+    result =set()
     for right in range(len(s)):
-        count[s[right]]=count.get(s[right],0)+1
-        maxCount = max(maxCount,count[s[right]])
-        while (right-left+1)-maxCount>k:
-            count[s[left]]-=1
+        while s[right] in result:
+            result.remove(s[left])
             left+=1
-        res =max(res,right-left+1)
-    return res
-                    
-        
+        result.add(s[right])
+        count=max(count,right-left+1)
+    return count 
+s='ababababab'
+result = leetcode3(s)
+print(result)
 
 
 

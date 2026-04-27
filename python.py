@@ -526,20 +526,66 @@
 #         res =max(res,right-left+1)
 #     return res
 
-def leetcode3(s):
-    left =0
-    count=0
-    result =set()
-    for right in range(len(s)):
-        while s[right] in result:
-            result.remove(s[left])
-            left+=1
-        result.add(s[right])
-        count=max(count,right-left+1)
-    return count 
-s='ababababab'
-result = leetcode3(s)
-print(result)
+# def leetcode3(s):
+#     left =0
+#     count=0
+#     result =set()
+#     for right in range(len(s)):
+#         while s[right] in result:
+#             result.remove(s[left])
+#             left+=1
+#         result.add(s[right])
+#         count=max(count,right-left+1)
+#     return count 
+# s='ababababab'
+# result = leetcode3(s)
+# print(result)
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        l=0
+        r=0
+        while r<len(nums):
+            if nums[r]!=0:
+                nums[l],nums[r]=nums[r],nums[l]
+                l+=1
+            r+=1
+        return nums
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        l=0
+        r=len(s)-1
+        while l<=r:
+            s[l],s[r]=s[r],s[l]
+            l+=1
+            r-=1
+        return s
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        l=0
+        r=1
+        while r<len(nums):
+            if nums[l]!=nums[r]:
+                l+=1
+                nums[l]=nums[r]
+            r+=1
+        return l+1
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        l=0
+        r=len(nums)-1
+        while l<=r:
+            if nums[l]!=val:
+                l+=1
+            else:
+                nums[l],nums[r]=nums[r],nums[l]
+                r-=1
+        return l        
 
 
 

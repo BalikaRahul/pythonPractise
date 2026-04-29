@@ -586,23 +586,36 @@
 #                 nums[l],nums[r]=nums[r],nums[l]
 #                 r-=1
         # return l        
+# class Solution:
+#     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+#         l=0
+#         r=len(numbers)-1
+#         sumi=0
+#         while l<=r:
+#             sumi =numbers[l]+ numbers[r]
+#             if sumi ==target:
+#                 return l+1,r+1
+#             elif sumi < target:
+#                 l+=1
+#             elif sumi > target:
+#                 r-=1
+#             else:
+#                 return -1
+
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+    def maxArea(self, height: List[int]) -> int:
         l=0
-        r=len(numbers)-1
-        sumi=0
+        r=len(height)-1
+        m=0
         while l<=r:
-            sumi =numbers[l]+ numbers[r]
-            if sumi ==target:
-                return l+1,r+1
-            elif sumi < target:
+            c=min(height[l],height[r])*(r-l)
+            if m<c:
+                m=c
+            elif height[l]<height[r]:
                 l+=1
-            elif sumi > target:
-                r-=1
             else:
-                return -1
-
-
+                r-=1
+        return m
 
 
 

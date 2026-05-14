@@ -602,25 +602,47 @@
 #             else:
 #                 return -1
 
-class Solution:
-    def maxArea(self, height: List[int]) -> int:
-        l=0
-        r=len(height)-1
-        m=0
-        while l<=r:
-            c=min(height[l],height[r])*(r-l)
-            if m<c:
-                m=c
-            elif height[l]<height[r]:
-                l+=1
-            else:
-                r-=1
-        return m
+# class Solution:
+#     def maxArea(self, height: List[int]) -> int:
+#         l=0
+#         r=len(height)-1
+#         m=0
+#         while l<=r:
+#             c=min(height[l],height[r])*(r-l)
+#             if m<c:
+#                 m=c
+#             elif height[l]<height[r]:
+#                 l+=1
+#             else:
+#                 r-=1
+#         return m
 
-
-
-
-
+# def leetCode26(arr):
+#     left =0
+#     right =1
+#     while right<len(arr):
+#         if arr[left]!=arr[right]:
+#             left+=1
+#             arr[left]=arr[right]
+#         right+=1
+#     return left+1
+# arr=[1,1,2]
+# result = leetCode26(arr)
+# print(result)
+# print(arr[:result])
+def leetcode1004(nums,k):
+    left =0
+    zero=0
+    length=0
+    for right in range(len(nums)):
+        if nums[right]==0:
+            zero+=1
+        while zero>k:
+            if nums[left]==0:
+                zero-=1
+            left+=1
+        length =max(length,right-left+1)
+    return length
 
 
 

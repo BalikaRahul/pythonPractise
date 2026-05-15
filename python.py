@@ -630,20 +630,42 @@
 # result = leetCode26(arr)
 # print(result)
 # print(arr[:result])
-def leetcode1004(nums,k):
-    left =0
-    zero=0
-    length=0
-    for right in range(len(nums)):
-        if nums[right]==0:
-            zero+=1
-        while zero>k:
-            if nums[left]==0:
-                zero-=1
-            left+=1
-        length =max(length,right-left+1)
-    return length
-
+# def leetcode1004(nums,k):
+#     left =0
+#     zero=0
+#     length=0
+#     for right in range(len(nums)):
+#         if nums[right]==0:
+#             zero+=1
+#         while zero>k:
+#             if nums[left]==0:
+#                 zero-=1
+#             left+=1
+#         length =max(length,right-left+1)
+#     return length
+class Solution:
+    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
+        zeros=0
+        ones=0
+        sum =0
+        for i in range (len(students)):
+            if students[i]==0:
+                zeros+=1
+            else:
+                ones+=1
+        for j in range(len(sandwiches)):
+            if sandwiches[j]==0:
+                if zeros==0:
+                    break
+                zeros-=1
+            else:
+                if ones==0:
+                    break
+                ones-=1
+        sum =ones+zeros
+        return sum
+    
+        
 
 
 

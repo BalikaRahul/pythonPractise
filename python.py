@@ -643,27 +643,47 @@
 #             left+=1
 #         length =max(length,right-left+1)
 #     return length
-class Solution:
-    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
-        zeros=0
-        ones=0
-        sum =0
-        for i in range (len(students)):
-            if students[i]==0:
-                zeros+=1
+# class Solution:
+#     def countStudents(self, students: List[int], sandwiches: List[int]) -> int:
+#         zeros=0
+#         ones=0
+#         sum =0
+#         for i in range (len(students)):
+#             if students[i]==0:
+#                 zeros+=1
+#             else:
+#                 ones+=1
+#         for j in range(len(sandwiches)):
+#             if sandwiches[j]==0:
+#                 if zeros==0:
+#                     break
+#                 zeros-=1
+#             else:
+#                 if ones==0:
+#                     break
+#                 ones-=1
+#         sum =ones+zeros
+#         return sum
+def leetcode42(nums):
+    l=0
+    r=len(nums)-1
+    lmax=0
+    rmax=0
+    total=0
+    while l<r:
+        if nums[l]<nums[r]:
+            if nums[l]>=lmax:
+                lmax=nums[l]
             else:
-                ones+=1
-        for j in range(len(sandwiches)):
-            if sandwiches[j]==0:
-                if zeros==0:
-                    break
-                zeros-=1
+                total+=lmax-nums[l]
+            l+=1
+        else:
+            if nums[r]>=rmax:
+                rmax=nums[r]
             else:
-                if ones==0:
-                    break
-                ones-=1
-        sum =ones+zeros
-        return sum
+                total+=rmax-nums[r]
+            r-=1
+        return total
     
         
 

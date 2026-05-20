@@ -664,27 +664,45 @@
 #                 ones-=1
 #         sum =ones+zeros
 #         return sum
-def leetcode42(nums):
-    l=0
-    r=len(nums)-1
-    lmax=0
-    rmax=0
-    total=0
-    while l<r:
-        if nums[l]<nums[r]:
-            if nums[l]>=lmax:
-                lmax=nums[l]
+# def leetcode42(nums):
+#     l=0
+#     r=len(nums)-1
+#     lmax=0
+#     rmax=0
+#     total=0
+#     while l<r:
+#         if nums[l]<nums[r]:
+#             if nums[l]>=lmax:
+#                 lmax=nums[l]
+#             else:
+#                 total+=lmax-nums[l]
+#             l+=1
+#         else:
+#             if nums[r]>=rmax:
+#                 rmax=nums[r]
+#             else:
+#                 total+=rmax-nums[r]
+#             r-=1
+#         return total
+def binarySearch(arr,target):
+    if len(arr) <1:
+        return -1
+    if len(arr)>1:
+        l=0
+        r=len(arr)-1
+        ans = len(arr)
+        while l<=r:
+            mid= (l+r)//2
+            if arr[mid]>=target:
+                ans =mid
+                r=mid-1
             else:
-                total+=lmax-nums[l]
-            l+=1
-        else:
-            if nums[r]>=rmax:
-                rmax=nums[r]
-            else:
-                total+=rmax-nums[r]
-            r-=1
-        return total
-    
+                l=mid+1
+        return ans
+arr=[0,1,2,3,3,4]
+target=3
+result= binarySearch(arr,target)
+print(result)
         
 
 

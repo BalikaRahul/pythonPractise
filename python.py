@@ -703,7 +703,26 @@
 # target=3
 # result= binarySearch(arr,target)
 # print(result)
-def LowerBoundbinarySearch(arr,target):
+# def LowerBoundbinarySearch(arr,target):
+#     if len(arr) <1:
+#         return -1
+#     if len(arr)>1:
+#         l=0
+#         r=len(arr)-1
+#         ans = len(arr)
+#         while l<=r:
+#             mid= (l+r)//2
+#             if arr[mid]>=target:
+#                 ans =mid
+#                 r=mid-1
+#             else:
+#                 l=mid+1
+#         return ans
+# arr=[0,1,2,3,3,4]
+# target=3
+# result= LowerBoundbinarySearch(arr,target)
+# print(result)
+def UpperBoundBinarySearch(arr,target):
     if len(arr) <1:
         return -1
     if len(arr)>1:
@@ -712,7 +731,7 @@ def LowerBoundbinarySearch(arr,target):
         ans = len(arr)
         while l<=r:
             mid= (l+r)//2
-            if arr[mid]>=target:
+            if arr[mid]>target:
                 ans =mid
                 r=mid-1
             else:
@@ -720,7 +739,7 @@ def LowerBoundbinarySearch(arr,target):
         return ans
 arr=[0,1,2,3,3,4]
 target=3
-result= LowerBoundbinarySearch(arr,target)
+result= UpperBoundBinarySearch(arr,target)
 print(result)
         
 

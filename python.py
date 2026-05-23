@@ -722,25 +722,41 @@
 # target=3
 # result= LowerBoundbinarySearch(arr,target)
 # print(result)
-def UpperBoundBinarySearch(arr,target):
-    if len(arr) <1:
-        return -1
-    if len(arr)>1:
-        l=0
-        r=len(arr)-1
-        ans = len(arr)
-        while l<=r:
-            mid= (l+r)//2
-            if arr[mid]>target:
-                ans =mid
-                r=mid-1
-            else:
-                l=mid+1
-        return ans
-arr=[0,1,2,3,3,4]
-target=3
-result= UpperBoundBinarySearch(arr,target)
+# def UpperBoundBinarySearch(arr,target):
+#     if len(arr) <1:
+#         return -1
+#     if len(arr)>1:
+#         l=0
+#         r=len(arr)-1
+#         ans = len(arr)
+#         while l<=r:
+#             mid= (l+r)//2
+#             if arr[mid]>target:
+#                 ans =mid
+#                 r=mid-1
+#             else:
+#                 l=mid+1
+#         return ans
+# arr=[0,1,2,3,3,4]
+# target=3
+# result= UpperBoundBinarySearch(arr,target)
+# print(result)
+def maxSubstring(nums,k):
+    l=0
+    sumof=0
+    maxlen=0
+    for r in range(len(nums)):
+        sumof +=nums[r]
+        while sumof >k:
+            sumof-=nums[l]
+            l+=1
+        maxlen=max(maxlen,r-l+1)
+    return maxlen
+nums=[10,5,2,7,1,9]
+k=15
+result = maxSubstring(nums,k)
 print(result)
+        
         
 
 

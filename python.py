@@ -741,20 +741,33 @@
 # target=3
 # result= UpperBoundBinarySearch(arr,target)
 # print(result)
-def maxSubstring(nums,k):
-    l=0
-    sumof=0
-    maxlen=0
+# def maxSubstring(nums,k):
+#     l=0
+#     sumof=0
+#     maxlen=0
+#     for r in range(len(nums)):
+#         sumof +=nums[r]
+#         while sumof >k:
+#             sumof-=nums[l]
+#             l+=1
+#         maxlen=max(maxlen,r-l+1)
+#     return maxlen
+# nums=[10,5,2,7,1,9]
+# k=15
+# result = maxSubstring(nums,k)
+# print(result)
+def leetcode53(nums):
+    sum =0
+    maxSum=nums[0]
     for r in range(len(nums)):
-        sumof +=nums[r]
-        while sumof >k:
-            sumof-=nums[l]
-            l+=1
-        maxlen=max(maxlen,r-l+1)
-    return maxlen
-nums=[10,5,2,7,1,9]
-k=15
-result = maxSubstring(nums,k)
+        sum+=nums[r]
+        maxSum=max(maxSum,sum)
+
+        if sum <0:
+            sum=0
+    return maxSum
+nums =[-2,1,-3,4,-1,2,1,-5,4]
+result =leetcode53(nums)
 print(result)
         
         

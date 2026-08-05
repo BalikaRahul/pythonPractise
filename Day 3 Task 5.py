@@ -1,0 +1,5 @@
+employee_details = (name,age,manager_assigned, emergency_contact, hr_note, id_proof) = ("Willam",30,True,True,'need to improve', 'panCard')
+print(emergency_contact in employee_details)
+print(manager_assigned in employee_details)
+print(hr_note in employee_details)
+print(id_proof in employee_details)

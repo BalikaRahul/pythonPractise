@@ -1,19 +1,25 @@
-# items=[]
-# prices=[]
-# while True:
-#     item  = input('enter the item: ')
-#     if item == 'exit' :
-#         for i in range(len(items)):
-#             print(i+1, items[i], prices[i])
-#         break
-#     price = int(input('enter the price of the item: '))
-#     items.append(item)
-#     prices.append(price)
-# Total=sum(prices)
-# print('Total: ',Total)
-# gst=18
-# Total+=(Total*gst)//100
-# print("grandTotal: ",Total)
+#Task 1
+items=[]
+prices=[]
+while True:
+    item  = input('enter the item: ')
+    if item == 'exit' :
+        for i in range(len(items)):
+            print(i+1, items[i], prices[i])
+        break
+    price = int(input('enter the price of the item: '))
+    items.append(item)
+    prices.append(price)
+Total=sum(prices)
+print('Total: ',Total)
+gst=18
+Total+=(Total*gst)//100
+print("grandTotal: ",Total)
+
+
+
+
+#Task 2
 n=int(input('enter the height: '))
 for i in range(n):
     for space in range(n-i-1):

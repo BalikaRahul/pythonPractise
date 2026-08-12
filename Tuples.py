@@ -1,4 +1,4 @@
-#task 1 
+# #task 1 
 movie =[]
 count=0
 total =0
@@ -18,6 +18,8 @@ while True:
         for i in range(len(movie)):
             print(movie[i])
         break
+
+
 # Task 2
 regi=set()
 while True:

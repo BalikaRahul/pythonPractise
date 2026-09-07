@@ -13,5 +13,7 @@ def Count(String):
             space+=1
         else:
             consonants+=1
-    return f'space{space} vowels{vowel} digits{digit} consonants{consonants}'
+    return f'space {space} vowels {vowel} digits {digit} consonants {consonants}'
 print(Count(String="python 123"))
+
+    
